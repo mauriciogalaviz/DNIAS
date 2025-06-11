@@ -1,0 +1,71 @@
+@import 'tailwindcss';
+@font-face {
+	font-family: 'NotoSans-Regular';
+	src: url('./Components/Fonts/NotoSans/NotoSans-Regular.ttf');
+}
+@font-face {
+	font-family: 'NotoSans-Bold';
+	src: url('./Components/Fonts/NotoSans/NotoSans-Bold.ttf');
+}
+@font-face {
+	font-family: 'NotoSans-Black';
+	src: url('./Components/Fonts/NotoSans/NotoSans-Black.ttf');
+}
+@font-face {
+	font-family: 'NotoSans-ExtraBold';
+	src: url('./Components/Fonts/NotoSans/NotoSans-ExtraBold.ttf');
+}
+@theme {
+	--Magenta: #611232 !important;
+	--color-primary: #611232 !important;
+	--color-secondary: #a57f2c !important;
+	--color-third: #9b2247 !important;
+	--color-dark: #161a1d !important;
+	--color-darkLight: #98989a !important;
+	--color-green: #002f2a !important;
+	--color-greenLight: #1e5b4f !important;
+	--color-goldLight: #e6d194 !important;
+	--Noto-Regular: 'NotoSans-Regular';
+	--Noto-Bold: 'NotoSans-Bold';
+	--Noto-Black: 'NotoSans-Black';
+	--Noto-ExtraBold: 'NotoSans-ExtraBold';
+}
+* {
+	font-family: var(--Noto-Regular), var(--Noto-Bold), var(--Noto-ExtraBold), var(--Noto-Black) !important ;
+	font-size: clamp(0.3rem, 2.5vw, 0.8rem);
+}
+:root {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: var(--Noto-Regular), var(--Noto-Bold), var(--Noto-ExtraBold), var(--Noto-Black) !important;
+	line-height: 1.3;
+	font-weight: 400;
+	
+	color: rgba(255, 255, 255, 0.87);
+	width: 100vw;
+	height: 100vh;
+	min-width: 100vw;
+	min-height: 100vh;
+	padding: 0px !important;
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	margin: 0 auto;
+	text-align: center;
+	display: block;
+	position: relative;
+	overflow: hidden !important;
+}
+/* Button {
+	background-color: var(--color-primary) !important;
+	color : white !important;
+}
+Button:hover{
+  background-color: var(--color-third) !important;
+	color : white !important;
+} */
