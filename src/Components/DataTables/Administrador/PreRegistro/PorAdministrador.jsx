@@ -3,7 +3,7 @@ import MUIDataTable from 'mui-datatables';
 import { useContext } from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import Options from "../../../ColumnsData/Options"
+import Options from '../../../ColumnsData/Options';
 import { FormularioContext } from '../../../Context/FormularioProvider';
 const PorAdministrador = () => {
 	const [TableData, setTableData] = useState([]);
@@ -98,7 +98,7 @@ const PorAdministrador = () => {
 						<Tooltip title="Ver Detalles">
 							<IconButton
 								onClick={() => {
-									VerRegistro(e.id_centro, name, 0);
+									VerRegistro(e.id_institucion, name, 0);
 								}}
 							>
 								<Visibility />
@@ -107,7 +107,7 @@ const PorAdministrador = () => {
 						<Tooltip title="Editar">
 							<IconButton
 								onClick={() => {
-									VerRegistro(e.id_centro, name, 1);
+									VerRegistro(e.id_institucion, name, 1);
 								}}
 							>
 								<Edit />
@@ -116,7 +116,7 @@ const PorAdministrador = () => {
 						<Tooltip title="Eliminar">
 							<IconButton
 								onClick={() => {
-									EliminarRegistro(e.id_centro, name);
+									EliminarRegistro(e.id_institucion, name);
 								}}
 							>
 								<Delete />

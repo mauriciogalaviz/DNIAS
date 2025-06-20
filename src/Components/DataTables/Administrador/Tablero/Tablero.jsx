@@ -1,15 +1,17 @@
-import { Box, Chip} from '@mui/material';
+import { Box, Chip } from '@mui/material';
 import MUIDataTable from 'mui-datatables';
 import { useContext } from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { FormularioContext } from '../../../Context/FormularioProvider';
-import Options from '../../../ColumnsData/Options'
+import Options from '../../../ColumnsData/Options';
 import { Edit, HighlightOff, Visibility } from '@mui/icons-material';
 import { IconButton } from '@mui/material';
+import { LoginContext } from '../../../Context/LoginProvider';
 const Tablero = () => {
 	const [TableData, setTableData] = useState([]);
 	const { VerRegistro, EliminarRegistro } = useContext(FormularioContext);
+	const { UserLogIn } = useContext(LoginContext);
 	/* const { headerList } = useContext(DataContext); */
 	const columns = [
 		{
@@ -90,6 +92,18 @@ const Tablero = () => {
 							<IconButton onClick={() => Centro_Inactivate(id, nombre, activo)}>
 								<HighlightOff />
 							</IconButton>
+							{UserLogIn.tipo_usuario == 2
+								? ((
+										<IconButton onClick={() => Centro_Ver(id, nombre, activo, 0)}>
+											<Accep />
+										</IconButton>
+								  ),
+								  (
+										<IconButton onClick={() => Centro_Ver(id, nombre, activo, 1)}>
+											<Edit />
+										</IconButton>
+								  ))
+								: null}
 						</Box>
 					);
 				},
@@ -114,7 +128,7 @@ const Tablero = () => {
 							<Tooltip title="Ver Detalles">
 								<IconButton
 									onClick={() => {
-										VerRegistro(e.id_centro, name, 0);
+										VerRegistro(e.id_institucion, name, 0);
 									}}
 								>
 									<Visibility />
@@ -123,7 +137,7 @@ const Tablero = () => {
 							<Tooltip title="Editar">
 								<IconButton
 									onClick={() => {
-										VerRegistro(e.id_centro, name, 1);
+										VerRegistro(e.id_institucion, name, 1);
 									}}
 								>
 									<Edit />
@@ -132,7 +146,7 @@ const Tablero = () => {
 							<Tooltip title="Eliminar">
 								<IconButton
 									onClick={() => {
-										EliminarRegistro(e.id_centro, name);
+										EliminarRegistro(e.id_institucion, name);
 									}}
 								>
 									<Delete />

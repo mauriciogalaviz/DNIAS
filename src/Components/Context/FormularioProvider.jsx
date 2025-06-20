@@ -9,8 +9,8 @@ import { Box } from '@mui/material';
 const FormularioContext = createContext();
 
 const FormularioProvider = ({ children }) => {
-	const { headerList, setNavModule } = useContext(DataContext);
-	const { setOpenBackDrop, SnackbarData, setSnackbarData } = useContext(UtilsContext);
+	//const { headerList, setNavModule } = useContext(DataContext);
+	const { /* setOpenBackDrop, */ SnackbarData, setSnackbarData } = useContext(UtilsContext);
 	//const { UserLogIn } = useContext(LoginContext);
 	const [activeButton, setActiveButton] = useState({
 		active: -1,
@@ -31,7 +31,7 @@ const FormularioProvider = ({ children }) => {
 	// Formulario Tipo Institución
 	const [FormTipoInstitucion, setFormTipoInstitucion] = useState({
 		initialValues: {
-			id_institucion: null,
+			id_institucion: IdInstitucion,
 			tipo_registro: null,
 			tipo_institucion: null,
 			rfc_institucion: null,
@@ -40,7 +40,7 @@ const FormularioProvider = ({ children }) => {
 			tipo_servicio: null,
 		},
 		data: {
-			id_institucion: null,
+			id_institucion: IdInstitucion,
 			tipo_registro: null,
 			tipo_institucion: null,
 			rfc_institucion: null,
@@ -52,7 +52,7 @@ const FormularioProvider = ({ children }) => {
 	// Formulario Datos de institución y domicilio social
 	const [FormDomicilio, setFormDomicilio] = useState({
 		initialValues: {
-			id_institucion: null,
+			id_institucion: IdInstitucion,
 			cluni: null,
 			tipo_organizacion: null,
 			anios_servicio: null,
@@ -85,7 +85,7 @@ const FormularioProvider = ({ children }) => {
 			fecha_expedicion_responsable: null,
 		},
 		data: {
-			id_institucion: null,
+			id_institucion: IdInstitucion,
 			cluni: null,
 			tipo_organizacion: null,
 			anios_servicio: null,
@@ -121,7 +121,7 @@ const FormularioProvider = ({ children }) => {
 	// Formulario Datos legales
 	const [FormDatosLegales, setFormDatosLegales] = useState({
 		initialValues: {
-			id_institucion: null,
+			id_institucion: IdInstitucion,
 			nombre_notario: null,
 			numero_notaria: null,
 			acta_constitutiva: null,
@@ -153,7 +153,7 @@ const FormularioProvider = ({ children }) => {
 			representante_legal: null,
 		},
 		data: {
-			id_institucion: null,
+			id_institucion: IdInstitucion,
 			nombre_notario: null,
 			numero_notaria: null,
 			acta_constitutiva: null,
@@ -187,6 +187,7 @@ const FormularioProvider = ({ children }) => {
 	});
 	const [FormRepresentanteLegal, setFormRepresentanteLegal] = useState({
 		initialValues: {
+			id_institucion: IdInstitucion,
 			nombre_responsable: null,
 			pa_responsable: null,
 			sa_responsable: null,
@@ -198,6 +199,7 @@ const FormularioProvider = ({ children }) => {
 			fecha_expedicion_responsable: null,
 		},
 		data: {
+			id_institucion: IdInstitucion,
 			nombre_responsable: null,
 			pa_responsable: null,
 			sa_responsable: null,
@@ -212,7 +214,7 @@ const FormularioProvider = ({ children }) => {
 	// Formulario Datos de servicios
 	const [FormDatosServicios, setFormDatosServicios] = useState({
 		initialValues: {
-			id_centro: null,
+			id_institucion: IdInstitucion,
 			objeto_social: null,
 			poblacion_objetivo_1: false,
 			cantidad_H_1: 0,
@@ -237,7 +239,7 @@ const FormularioProvider = ({ children }) => {
 			cantidad_personas: null,
 		},
 		data: {
-			id_centro: null,
+			id_institucion: IdInstitucion,
 			objeto_social: null,
 			poblacion_objetivo_1: false,
 			cantidad_H_1: 0,
@@ -264,12 +266,12 @@ const FormularioProvider = ({ children }) => {
 	});
 	const [FormCoberturaGeo, setFormCoberturaGeo] = useState({
 		initialValues: {
-			id_centro: null,
+			id_institucion: IdInstitucion,
 			entidad: null,
 			municipio: null,
 		},
 		data: {
-			id_centro: null,
+			id_institucion: IdInstitucion,
 			entidad: null,
 			municipio: null,
 		},
@@ -277,7 +279,7 @@ const FormularioProvider = ({ children }) => {
 	// Formulario asistencia Social
 	const [FormAsistenciaSocial, setFormAsistenciaSocial] = useState({
 		initialValues: {
-			id_centro: null,
+			id_institucion: IdInstitucion,
 			punto_0: false,
 			punto_0_relevante: false,
 			punto_1: false,
@@ -345,7 +347,7 @@ const FormularioProvider = ({ children }) => {
 			discapacidad_multiple: false,
 		},
 		data: {
-			id_centro: null,
+			id_institucion: IdInstitucion,
 			punto_0: false,
 			punto_0_relevante: false,
 			punto_1: false,
@@ -416,7 +418,7 @@ const FormularioProvider = ({ children }) => {
 	// Formulario Servicios Salud
 	const [FormServiciosSalud, setFormServiciosSalud] = useState({
 		initialValues: {
-			id_centro: null,
+			id_institucion: IdInstitucion,
 			servicio_salud_0: false,
 			servicio_salud_1: false,
 			servicio_salud_2: false,
@@ -432,7 +434,7 @@ const FormularioProvider = ({ children }) => {
 			enfermedades_cronicas: null,
 		},
 		data: {
-			id_centro: null,
+			id_institucion: IdInstitucion,
 			servicio_salud_0: false,
 			servicio_salud_1: false,
 			servicio_salud_2: false,
@@ -451,7 +453,7 @@ const FormularioProvider = ({ children }) => {
 	// Formulario Recursos Humanos, infraestructura, recursos económicos y donativos
 	const [FormRecursosHumanos, setFormRecursosHumanos] = useState({
 		initialValues: {
-			id_centro: null,
+			id_institucion: IdInstitucion,
 			especialidad_0: null,
 			licenciatura_0: null,
 			carrera_tecnica_0: null,
@@ -513,7 +515,7 @@ const FormularioProvider = ({ children }) => {
 			medios_13: false,
 		},
 		data: {
-			id_centro: null,
+			id_institucion: IdInstitucion,
 			especialidad_0: null,
 			licenciatura_0: null,
 			carrera_tecnica_0: null,
@@ -577,22 +579,22 @@ const FormularioProvider = ({ children }) => {
 	});
 	const [FormRecursosHumanosInfra, setFormRecursosHumanosInfra] = useState({
 		initialValues: {
-			id_centro: null,
+			id_institucion: IdInstitucion,
 			infra: null,
 		},
 		data: {
-			id_centro: null,
+			id_institucion: IdInstitucion,
 			infra: null,
 		},
 	});
 	const [FormRecursosHumanosGobierno, setFormRecursosHumanosGobierno] = useState({
 		initialValues: {
-			id_centro: null,
+			id_institucion: IdInstitucion,
 			institucion_gobierno_apoyo: null,
 			nombre: null,
 		},
 		data: {
-			id_centro: null,
+			id_institucion: IdInstitucion,
 			institucion_gobierno_apoyo: null,
 			nombre: null,
 		},
@@ -600,14 +602,14 @@ const FormularioProvider = ({ children }) => {
 	// Formulario Documentacion y responsable de llenado
 	const [FormDocumentacion, setFormDocumentacion] = useState({
 		initialValues: {
-			id_centro: null,
+			id_institucion: IdInstitucion,
 			modelo_intervencion: null,
 			nombre_captura: null,
 			cargo_captura: null,
 			fecha_captura: null,
 		},
 		data: {
-			id_centro: null,
+			id_institucion: IdInstitucion,
 			modelo_intervencion: null,
 			nombre_captura: null,
 			cargo_captura: null,
@@ -616,20 +618,72 @@ const FormularioProvider = ({ children }) => {
 	});
 	const [FormDocumentacionCarga, setFormDocumentacionCarga] = useState({
 		initialValues: {
-			id_centro: IdInstitucion,
+			id_institucion: IdInstitucion,
 			tipo_archivo: null,
 			archivo: [],
 		},
 		data: {
-			id_centro: IdInstitucion,
+			id_institucion: IdInstitucion,
 			tipo_archivo: null,
 			archivo: [],
+		},
+	});
+	// Formulario Dictamen
+	const [FormularioDictamen, setFormularioDictamen] = useState({
+		initialValues: {
+			id_institucion: IdInstitucion,
+			id_enlace: null,
+			id_verificador: null,
+			fecha_verificacion: null,
+			c1_0: false,
+			c1_1: false,
+			c1_2: false,
+			c1_3: false,
+			c1_4: false,
+			c1_5: false,
+			c1_6: false,
+			c2_0: false,
+			c2_1: false,
+			c2_2: false,
+			c2_3: false,
+			c2_4: false,
+			c2_5: false,
+			c2_6: false,
+			c3_0: false,
+			c4_0: false,
+			c5_0: false,
+			observaciones_infraestructura: null,
+		},
+		data: {
+			id_institucion: IdInstitucion,
+			id_enlace: null,
+			id_verificador: null,
+			fecha_verificacion: null,
+			c1_0: false,
+			c1_1: false,
+			c1_2: false,
+			c1_3: false,
+			c1_4: false,
+			c1_5: false,
+			c1_6: false,
+			c2_0: false,
+			c2_1: false,
+			c2_2: false,
+			c2_3: false,
+			c2_4: false,
+			c2_5: false,
+			c2_6: false,
+			c3_0: false,
+			c4_0: false,
+			c5_0: false,
+			observaciones_infraestructura: null,
 		},
 	});
 
 	//////////////////////////////////
 	// Carga Forms
 	const CargaTipoInstitucion = async () => {
+		
 		console.log('CargaTipoInstitucion');
 	};
 	const CargaDatosDomicilio = async () => {
@@ -816,6 +870,8 @@ const FormularioProvider = ({ children }) => {
 		setFormDocumentacion,
 		FormDocumentacionCarga,
 		setFormDocumentacionCarga,
+		// Formulario Dictamen
+		FormularioDictamen, setFormularioDictamen,
 		////////////////////////////
 		//Carga Forms
 		CargaTipoInstitucion,

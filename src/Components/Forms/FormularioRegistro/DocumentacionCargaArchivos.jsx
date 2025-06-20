@@ -18,11 +18,11 @@ const DocumentacionCargaArchivos = () => {
 			console.log(archivoSeleccionado.name);
 			console.log(archivoSeleccionado.size);
 			console.log(archivoSeleccionado.type);
-			values.archivo=[archivoSeleccionado];
+			values.archivo = [archivoSeleccionado];
 			console.log(values.archivo);
 		},
 		validationSchema: Yup.object({
-			id_centro: Yup.string().required('Este campo es obligatorio').nonNullable(),
+			id_institucion: Yup.string().required('Este campo es obligatorio').nonNullable(),
 			tipo_archivo: Yup.number().required('Este campo es obligatorio').nonNullable(),
 		}),
 	});
@@ -108,19 +108,28 @@ const DocumentacionCargaArchivos = () => {
 											Archivo seleccionado: {archivoSeleccionado.name}
 										</Typography>
 										<Typography variant="body2" className="mt-2">
-											Nombre del archivo en el sistema con el que se guardará: {
-												formik.values.tipo_archivo == 1 ? 'COMPROBANTE_DE_DOMICILIO_SOCIAL' :
-												formik.values.tipo_archivo == 2 ? 'IDENTIFICACION_REPRESENTANTE_LEGAL' :
-												formik.values.tipo_archivo == 3 ? 'IDENTIFICACION_DIRECTOR' :
-												formik.values.tipo_archivo == 4 ? 'COMPROBANTE_DE_DOMICILIO_LEGAL' :
-												formik.values.tipo_archivo == 5 ? 'REGISTRO_FEDERAL_DE_CONTRIBUYENTES' :
-												formik.values.tipo_archivo == 6 ? 'CLUNI' :
-												formik.values.tipo_archivo == 7 ? 'OTRO' :
-												formik.values.tipo_archivo == 8 ? 'VALIDACION_POR_LA_JAP' :
-												formik.values.tipo_archivo == 9 ? 'VALIDACION_DE_DOCUMENTOS' :
-												formik.values.tipo_archivo == 10 ? 'INFORME_ANUAL' :
-												'DESCONOCIDO'
-											}
+											Nombre del archivo en el sistema con el que se guardará:{' '}
+											{formik.values.tipo_archivo == 1
+												? 'COMPROBANTE_DE_DOMICILIO_SOCIAL'
+												: formik.values.tipo_archivo == 2
+												? 'IDENTIFICACION_REPRESENTANTE_LEGAL'
+												: formik.values.tipo_archivo == 3
+												? 'IDENTIFICACION_DIRECTOR'
+												: formik.values.tipo_archivo == 4
+												? 'COMPROBANTE_DE_DOMICILIO_LEGAL'
+												: formik.values.tipo_archivo == 5
+												? 'REGISTRO_FEDERAL_DE_CONTRIBUYENTES'
+												: formik.values.tipo_archivo == 6
+												? 'CLUNI'
+												: formik.values.tipo_archivo == 7
+												? 'OTRO'
+												: formik.values.tipo_archivo == 8
+												? 'VALIDACION_POR_LA_JAP'
+												: formik.values.tipo_archivo == 9
+												? 'VALIDACION_DE_DOCUMENTOS'
+												: formik.values.tipo_archivo == 10
+												? 'INFORME_ANUAL'
+												: 'DESCONOCIDO'}
 										</Typography>
 									</Fragment>
 								)}
@@ -128,11 +137,7 @@ const DocumentacionCargaArchivos = () => {
 							{formik.touched.archivo && formik.errors.archivo && <FormHelperText error>{formik.errors.archivo}</FormHelperText>}
 						</FormControl>
 					</Box>
-					{BotoneraForm ? (
-						<BotonGuardar formik={formik} />
-					) : null}
-				
-						
+					{BotoneraForm ? <BotonGuardar formik={formik} /> : null}
 				</form>
 			</Box>
 		</Card>

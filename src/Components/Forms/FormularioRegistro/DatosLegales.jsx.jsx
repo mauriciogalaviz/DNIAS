@@ -40,7 +40,7 @@ const DatosLegales = () => {
 			entre_calle1: Yup.string().required('Este campo es obligatorio'),
 			entre_calle2: Yup.string().required('Este campo es obligatorio'),
 			cp: Yup.string().required('Este campo es obligatorio'),
-			colonia: Yup.string().required('Este campo es obligatorio'),
+			id_asentamiento: Yup.string().required('Este campo es obligatorio'),
 			telefono1: Yup.string().required('Este campo es obligatorio'),
 			correo: Yup.string().required('Este campo es obligatorio'),
 			web: Yup.string().required('Este campo es obligatorio'),
@@ -56,7 +56,7 @@ const DatosLegales = () => {
 			values.municipio = Municipio;
 			let url = `https://api.dif.gob.mx/cuidados/cai/registro/`;
 			let metodo = 'POST';
-			if (formik.values.id_centro != null) {
+			if (formik.values.id_institucion != null) {
 				url = `https://api.dif.gob.mx/cuidados/cai/actualizar/`;
 				metodo = 'PUT';
 			}
@@ -500,12 +500,12 @@ const DatosLegales = () => {
 									select
 									className="col-span-12"
 									label="Asentamiento / Colonia"
-									name="colonia"
-									value={formik.values.colonia}
+									name="id_asentamiento"
+									value={formik.values.id_asentamiento}
 									onChange={formik.handleChange}
 									onBlur={formik.handleBlur}
-									error={formik.touched.colonia && Boolean(formik.errors.colonia)}
-									helperText={formik.touched.colonia && formik.errors.colonia}
+									error={formik.touched.id_asentamiento && Boolean(formik.errors.id_asentamiento)}
+									helperText={formik.touched.id_asentamiento && formik.errors.id_asentamiento}
 								>
 									<MenuItem key={1} value="1">
 										Pública
@@ -611,7 +611,9 @@ const DatosLegales = () => {
 					</Box>
 
 					<Box className="col-span-12 grid grid-cols-12  md:col-span-12">
-						<InputLabel className='col-span-12 !text-right'>Asignar a los representantes Legales (Max 4) dando clic en el botón <Add /> de la tabla </InputLabel>
+						<InputLabel className="col-span-12 !text-right">
+							Asignar a los representantes Legales (Max 4) dando clic en el botón <Add /> de la tabla{' '}
+						</InputLabel>
 						<DatosLegalesDataTable />
 					</Box>
 					{/* Botonera */}

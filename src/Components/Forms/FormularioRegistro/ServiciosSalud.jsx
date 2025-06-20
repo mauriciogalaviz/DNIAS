@@ -32,7 +32,7 @@ const ServiciosSalud = () => {
 	const formik = useFormik({
 		initialValues: FormServiciosSalud.data,
 		validationSchema: Yup.object({
-			id_centro: Yup.string().required('Este campo es obligatorio').nonNullable(),
+			id_institucion: Yup.string().required('Este campo es obligatorio').nonNullable(),
 			servicio_salud_0: Yup.boolean().notRequired(),
 			servicio_salud_1: Yup.boolean().notRequired(),
 			servicio_salud_2: Yup.boolean().notRequired(),
@@ -65,7 +65,7 @@ const ServiciosSalud = () => {
 			setOpenBackDrop(false);
 			let url = `https://api.dif.gob.mx/cuidados/cai/registro/`;
 			let metodo = 'POST';
-			if (formik.values.id_centro != null) {
+			if (formik.values.id_institucion != null) {
 				url = `https://api.dif.gob.mx/cuidados/cai/actualizar/`;
 				metodo = 'PUT';
 			}
@@ -140,43 +140,45 @@ const ServiciosSalud = () => {
 							</Fragment>
 						))}
 					</Box>
-					{formik.values.servicio_salud_11 == true ?<Box className="col-span-12 md:col-span-12 grid grid-cols-12 sm:gap-4 lg:gap-0  text-left">
-						<TextField
-							fullWidth
-							select
-							className="col-span-12"
-							label="Tipo de enfermedad crónica"
-							name="enfermedades_cronicas"
-							value={formik.values.enfermedades_cronicas}
-							onChange={formik.handleChange}
-							onBlur={formik.handleBlur}
-						>
-							<MenuItem key={1} value="1">
-								Enfermedad crónica 1
-							</MenuItem>
-							<MenuItem key={2} value="2">
-								Enfermedad crónica 2
-							</MenuItem>
-							<MenuItem key={3} value="3">
-								Enfermedad crónica 3
-							</MenuItem>
-							<MenuItem key={4} value="4">
-								Enfermedad crónica 4
-							</MenuItem>
-							<MenuItem key={5} value="5">
-								Enfermedad crónica 5
-							</MenuItem>
-							<MenuItem key={6} value="6">
-								Enfermedad crónica 6
-							</MenuItem>
-							<MenuItem key={7} value="7">
-								Enfermedad crónica 7
-							</MenuItem>
-							<MenuItem key={8} value="8">
-								Enfermedad crónica 8
-							</MenuItem>
-						</TextField>
-					</Box>: null}
+					{formik.values.servicio_salud_11 == true ? (
+						<Box className="col-span-12 md:col-span-12 grid grid-cols-12 sm:gap-4 lg:gap-0  text-left">
+							<TextField
+								fullWidth
+								select
+								className="col-span-12"
+								label="Tipo de enfermedad crónica"
+								name="enfermedades_cronicas"
+								value={formik.values.enfermedades_cronicas}
+								onChange={formik.handleChange}
+								onBlur={formik.handleBlur}
+							>
+								<MenuItem key={1} value="1">
+									Enfermedad crónica 1
+								</MenuItem>
+								<MenuItem key={2} value="2">
+									Enfermedad crónica 2
+								</MenuItem>
+								<MenuItem key={3} value="3">
+									Enfermedad crónica 3
+								</MenuItem>
+								<MenuItem key={4} value="4">
+									Enfermedad crónica 4
+								</MenuItem>
+								<MenuItem key={5} value="5">
+									Enfermedad crónica 5
+								</MenuItem>
+								<MenuItem key={6} value="6">
+									Enfermedad crónica 6
+								</MenuItem>
+								<MenuItem key={7} value="7">
+									Enfermedad crónica 7
+								</MenuItem>
+								<MenuItem key={8} value="8">
+									Enfermedad crónica 8
+								</MenuItem>
+							</TextField>
+						</Box>
+					) : null}
 					{/* Botonera */}
 					{BotoneraForm ? <BotonGuardar formik={formik} /> : null}
 				</form>

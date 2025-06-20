@@ -41,7 +41,7 @@ const RecursosHumanos = () => {
 	const { headerList } = useContext(DataContext);
 	//const [DonateActivate, setDonateActivate] = useState(false);
 	const [SumPorcentaje, setSumPorcentaje] = useState(0);
-	const Sumando = async ()=>{
+	const Sumando = async () => {
 		console.log('Antes', SumPorcentaje);
 		if (SumPorcentaje != 0) {
 			setSumPorcentaje((prev) => 0);
@@ -59,7 +59,7 @@ const RecursosHumanos = () => {
 	const formik = useFormik({
 		initialValues: FormRecursosHumanos.data,
 		validationSchema: Yup.object({
-			id_centro: Yup.string().required('Este campo es obligatorio'),
+			id_institucion: Yup.string().required('Este campo es obligatorio'),
 			especialidad_0: Yup.number().notRequired(),
 			licenciatura_0: Yup.number().notRequired(),
 			carrera_tecnica_0: Yup.number().notRequired(),
@@ -130,7 +130,7 @@ const RecursosHumanos = () => {
 			values.municipio = Municipio;
 			let url = `https://api.dif.gob.mx/cuidados/cai/registro/`;
 			let metodo = 'POST';
-			if (formik.values.id_centro != null) {
+			if (formik.values.id_institucion != null) {
 				url = `https://api.dif.gob.mx/cuidados/cai/actualizar/`;
 				metodo = 'PUT';
 			}
@@ -196,7 +196,7 @@ const RecursosHumanos = () => {
 			'OTRO',
 		],
 	};
-	const InstitutoRecurso = ['Empesas', 'Personas físicas', 'Instituciones financieras', 'Fundaciones', 'Instituciones de gobierno']
+	const InstitutoRecurso = ['Empesas', 'Personas físicas', 'Instituciones financieras', 'Fundaciones', 'Instituciones de gobierno'];
 
 	return (
 		<Box className="col-span-12 grid grid-cols-12">
@@ -341,8 +341,8 @@ const RecursosHumanos = () => {
 								Formación de recursos humanos
 							</Typography>
 						</AccordionSummary>
-						<AccordionDetails className="text-left">
-							<FormControl component="fieldset" error={formik.touched.capacitacion_asistencia_social && formik.errors.capacitacion_asistencia_social}>
+						<AccordionDetails className="text-left grid col-span-12 grid-cols-12 gap-4">
+							<FormControl component="fieldset" error={formik.touched.capacitacion_asistencia_social && formik.errors.capacitacion_asistencia_social} className="col-span-12">
 								<FormLabel component="legend">¿Su institución brinda capacitación en asistencia social?*</FormLabel>
 								<RadioGroup row name="capacitacion_asistencia_social" value={formik.values.capacitacion_asistencia_social || ''} onChange={formik.handleChange}>
 									<FormControlLabel value={true} control={<Radio />} label="Sí" />
@@ -352,6 +352,36 @@ const RecursosHumanos = () => {
 									{formik.touched.capacitacion_asistencia_social && formik.errors.capacitacion_asistencia_social ? formik.errors.capacitacion_asistencia_social : ''}
 								</FormHelperText>
 							</FormControl>
+							{formik.values.capacitacion_asistencia_social == 'true' ? (
+								<Box className="col-span-12 md:col-span-6 ">
+									<TextField
+										fullWidth
+										multiline
+										rows={3}
+										rowsMax={6}
+										label="¿Que tipo de cursos ofrece?"
+										name="capacitacion_asistencia_social_tipo_cursos"
+										value={formik.values.capacitacion_asistencia_social_tipo_cursos}
+										onChange={formik.handleChange}
+										onBlur={formik.handleBlur}
+									/>
+								</Box>
+							) : null}
+							{formik.values.capacitacion_asistencia_social == 'true' ? (
+								<Box className="col-span-12 md:col-span-6">
+									<TextField
+										fullWidth
+										multiline
+										rows={3}
+										rowsMax={6}
+										label="¿Que tipo capacitación requiere el personal de su institución?"
+										name="capacitacion_asistencia_social_requiere"
+										value={formik.values.capacitacion_asistencia_social_requiere}
+										onChange={formik.handleChange}
+										onBlur={formik.handleBlur}
+									/>
+								</Box>
+							) : null}
 						</AccordionDetails>
 					</Accordion>
 					<Accordion className="col-span-12" defaultExpanded>
@@ -433,7 +463,7 @@ const RecursosHumanos = () => {
 									</RadioGroup>
 									<FormHelperText>{formik.touched.institucion_red_organizaciones && formik.errors.institucion_red_organizaciones}</FormHelperText>
 								</FormControl>
-								{formik.values.institucion_red_organizaciones == 'true' ?
+								{formik.values.institucion_red_organizaciones == 'true' ? (
 									<Box className="col-span-12">
 										<TextField
 											fullWidth
@@ -445,7 +475,7 @@ const RecursosHumanos = () => {
 											onBlur={formik.handleBlur}
 										/>
 									</Box>
-								: null}
+								) : null}
 							</Box>
 						</AccordionDetails>
 					</Accordion>
@@ -537,7 +567,6 @@ const RecursosHumanos = () => {
 										})}
 										{formik.values.instituto_4 == true ? (
 											<Box className="col-span-12 grid grid-cols-12 gap-4 pl-12">
-												
 												<InputLabel className="col-span-12 !text-right">
 													Asignar las instituciones de gobierno dando clic en el botón <Add /> de la tabla{' '}
 												</InputLabel>
@@ -662,16 +691,17 @@ const RecursosHumanos = () => {
 									</RadioGroup>
 									<FormHelperText>{formik.touched.donatario_autorizado && formik.errors.donatario_autorizado}</FormHelperText>
 								</FormControl>
-								{formik.values.donatario_autorizado == 'true' ?<Box className='col-span-12'>
-									<TextField
-									fullWidth
-									label='Anote su clavede donataria autorizada'
-									value={formik.values.donatario_autorizado_clave}
-									onChange={formik.handleChange}
-									onBlur={formik.handleBlur}
-									/>
-
-								</Box>:null}
+								{formik.values.donatario_autorizado == 'true' ? (
+									<Box className="col-span-12">
+										<TextField
+											fullWidth
+											label="Anote su clavede donataria autorizada"
+											value={formik.values.donatario_autorizado_clave}
+											onChange={formik.handleChange}
+											onBlur={formik.handleBlur}
+										/>
+									</Box>
+								) : null}
 							</Box>
 						</AccordionDetails>
 					</Accordion>

@@ -17,7 +17,7 @@ const RecursosHumanosGobierno = () => {
 	const formik = useFormik({
 		initialValues: FormRecursosHumanosGobierno.data,
 		validationSchema: Yup.object({
-			id_centro: Yup.string().required('Este campo es obligatorio'),
+			id_institucion: Yup.string().required('Este campo es obligatorio'),
 			institucion_gobierno_apoyo: Yup.string().required('Este campo es obligatorio'),
 			nombre_instituto_gob: Yup.string().required('Este campo es obligatorio'),
 		}),
@@ -27,7 +27,7 @@ const RecursosHumanosGobierno = () => {
 
 			let url = `https://api.dif.gob.mx/cuidados/cai/registro/`;
 			let metodo = 'POST';
-			if (formik.values.id_centro != null) {
+			if (formik.values.id_institucion != null) {
 				url = `https://api.dif.gob.mx/cuidados/cai/actualizar/`;
 				metodo = 'PUT';
 			}

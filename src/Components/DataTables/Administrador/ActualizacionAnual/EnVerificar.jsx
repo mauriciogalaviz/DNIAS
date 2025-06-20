@@ -11,7 +11,7 @@ import { FormularioContext } from '../../../Context/FormularioProvider';
 import { DataContext } from '../../../Context/DataProvider';
 import MapIcon from '@mui/icons-material/Map';
 import PrintIcon from '@mui/icons-material/Print';
-import Options from '../../../ColumnsData/Options'
+import Options from '../../../ColumnsData/Options';
 const EnVerificar = () => {
 	const [TableData, setTableData] = useState([]);
 	const { VerRegistro, EliminarRegistro } = useContext(FormularioContext);
@@ -69,7 +69,7 @@ const EnVerificar = () => {
 						<Tooltip title="Ver Detalles">
 							<IconButton
 								onClick={() => {
-									VerRegistro(e.id_centro, name, 0);
+									VerRegistro(e.id_institucion, name, 0);
 								}}
 							>
 								<Visibility />
@@ -78,7 +78,7 @@ const EnVerificar = () => {
 						<Tooltip title="Editar">
 							<IconButton
 								onClick={() => {
-									VerRegistro(e.id_centro, name, 1);
+									VerRegistro(e.id_institucion, name, 1);
 								}}
 							>
 								<Edit />
@@ -87,7 +87,7 @@ const EnVerificar = () => {
 						<Tooltip title="Eliminar">
 							<IconButton
 								onClick={() => {
-									EliminarRegistro(e.id_centro, name);
+									EliminarRegistro(e.id_institucion, name);
 								}}
 							>
 								<Delete />

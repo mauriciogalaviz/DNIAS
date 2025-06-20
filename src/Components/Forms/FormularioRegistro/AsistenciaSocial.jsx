@@ -16,10 +16,10 @@ const AsistenciaSocial = () => {
 	const { FormAsistenciaSocial, BotoneraForm } = useContext(FormularioContext);
 	const { SnackbarData, setSnackbarData, setOpenBackDrop } = useContext(UtilsContext);
 	const { headerList } = useContext(DataContext);
-	const [puntosRelevantes, setPuntosRelevantes] = useState(1)
+	const [puntosRelevantes, setPuntosRelevantes] = useState(1);
 	const [RelevanteActive, setRelevanteActive] = useState(false);
 
-	const CountCheck = async (num) =>{
+	const CountCheck = async (num) => {
 		console.log(num);
 		console.log(puntosRelevantes);
 		console.log(typeof puntosRelevantes); // Debe ser 'number'
@@ -29,10 +29,8 @@ const AsistenciaSocial = () => {
 		console.log('Después:', nuevoValor);
 		setPuntosRelevantes(nuevoValor);
 
-
-
 		puntosRelevantes == 2 ? setRelevanteActive(true) : setRelevanteActive(false);
-	}
+	};
 	const puntos = [
 		'APOYO ALIMENTARIO Y ORIENTACIÓN NUTRICIONAL',
 		'APOYO ECONÓMICO O APOYO EN ESPECIE',
@@ -64,7 +62,7 @@ const AsistenciaSocial = () => {
 	const formik = useFormik({
 		initialValues: FormAsistenciaSocial.data,
 		validationSchema: Yup.object({
-			id_centro: Yup.string().required('Este campo es obligatorio').nonNullable(),
+			id_institucion: Yup.string().required('Este campo es obligatorio').nonNullable(),
 			punto_0: Yup.boolean().notRequired(),
 			punto_0_relevante: Yup.boolean().notRequired(),
 			punto_1: Yup.boolean().notRequired(),
@@ -149,7 +147,7 @@ const AsistenciaSocial = () => {
 			setOpenBackDrop(false);
 			let url = `https://api.dif.gob.mx/cuidados/cai/registro/`;
 			let metodo = 'POST';
-			if (formik.values.id_centro != null) {
+			if (formik.values.id_institucion != null) {
 				url = `https://api.dif.gob.mx/cuidados/cai/actualizar/`;
 				metodo = 'PUT';
 			}

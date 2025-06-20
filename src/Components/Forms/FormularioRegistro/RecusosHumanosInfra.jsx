@@ -8,58 +8,58 @@ import { DataContext } from '../../Context/DataProvider';
 import BotonGuardar from '../BotonGuardar';
 
 const RecusosHumanosInfra = () => {
-	const { FormRecursosHumanosInfra,  BotoneraForm } = useContext(FormularioContext);
-		const { SnackbarData, setSnackbarData, setOpenBackDrop } = useContext(UtilsContext);
-		const { headerList } = useContext(DataContext);
-	
-		const formik = useFormik({
-			initialValues: FormRecursosHumanosInfra.data,
-			validationSchema: Yup.object({
-				id_centro: Yup.string().required('Este campo es obligatorio').nonNullable(),
-				infra: Yup.string().required('Este campo es obligatorio'),
-			}),
-			onSubmit: async (values) => {
-				console.log(values);
-				setOpenBackDrop(true);
-				let url = `https://api.dif.gob.mx/cuidados/cai/registro/`;
-				let metodo = 'POST';
-				try {
-					let response = await fetch(url, {
-						method: metodo,
-						headers: headerList,
-						body: JSON.stringify(values),
-					});
-					if (!response.ok) throw { error: response.status, message: response.statusText };
-					let json = await response.json();
-					console.log(json);
-					setOpenBackDrop(false);
-					//clearDataForm2();
-					setSnackbarData({
-						...SnackbarData,
-						open: true,
-						severity: 'success',
-						content: 'CAI creada correctamente.',
-						duration: 3000,
-					});
-					//clearDataForm2();
-				} catch (error) {
-					console.error('Error:', error);
-					setOpenBackDrop(false);
-					setSnackbarData({
-						...SnackbarData,
-						open: true,
-						severity: 'error',
-						content: 'Hubo un error al crear la CAI. Por favor, intente de nuevo.',
-						duration: 3000,
-					});
-				}
-			},
-			enableReinitialize: true,
-			validateOnBlur: true,
-			validateOnChange: true,
-			validateOnMount: true,
-		});
-  return (
+	const { FormRecursosHumanosInfra, BotoneraForm } = useContext(FormularioContext);
+	const { SnackbarData, setSnackbarData, setOpenBackDrop } = useContext(UtilsContext);
+	const { headerList } = useContext(DataContext);
+
+	const formik = useFormik({
+		initialValues: FormRecursosHumanosInfra.data,
+		validationSchema: Yup.object({
+			id_institucion: Yup.string().required('Este campo es obligatorio').nonNullable(),
+			infra: Yup.string().required('Este campo es obligatorio'),
+		}),
+		onSubmit: async (values) => {
+			console.log(values);
+			setOpenBackDrop(true);
+			let url = `https://api.dif.gob.mx/cuidados/cai/registro/`;
+			let metodo = 'POST';
+			try {
+				let response = await fetch(url, {
+					method: metodo,
+					headers: headerList,
+					body: JSON.stringify(values),
+				});
+				if (!response.ok) throw { error: response.status, message: response.statusText };
+				let json = await response.json();
+				console.log(json);
+				setOpenBackDrop(false);
+				//clearDataForm2();
+				setSnackbarData({
+					...SnackbarData,
+					open: true,
+					severity: 'success',
+					content: 'CAI creada correctamente.',
+					duration: 3000,
+				});
+				//clearDataForm2();
+			} catch (error) {
+				console.error('Error:', error);
+				setOpenBackDrop(false);
+				setSnackbarData({
+					...SnackbarData,
+					open: true,
+					severity: 'error',
+					content: 'Hubo un error al crear la CAI. Por favor, intente de nuevo.',
+					duration: 3000,
+				});
+			}
+		},
+		enableReinitialize: true,
+		validateOnBlur: true,
+		validateOnChange: true,
+		validateOnMount: true,
+	});
+	return (
 		<Card className="col-span-12 grid grid-cols-12 p-0 ">
 			<Divider className="col-span-12 p-2" />
 			<Box className="col-span-12 grid grid-cols-12 p-4">
@@ -95,13 +95,11 @@ const RecusosHumanosInfra = () => {
 					</Box>
 
 					{/* Botonera */}
-					{BotoneraForm ? (
-						<BotonGuardar formik={formik} />
-					) : null}
+					{BotoneraForm ? <BotonGuardar formik={formik} /> : null}
 				</form>
 			</Box>
 		</Card>
-  );
-}
+	);
+};
 
-export default RecusosHumanosInfra
+export default RecusosHumanosInfra;

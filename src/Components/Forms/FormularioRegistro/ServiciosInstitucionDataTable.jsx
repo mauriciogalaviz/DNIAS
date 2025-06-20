@@ -92,7 +92,7 @@ const ServiciosInstitucionDataTable = () => {
 						<Tooltip title="Ver Detalles">
 							<IconButton
 								onClick={() => {
-									VerRegistro(e.id_centro, name, 0);
+									VerRegistro(e.id_institucion, name, 0);
 								}}
 							>
 								<Visibility />
@@ -101,7 +101,7 @@ const ServiciosInstitucionDataTable = () => {
 						<Tooltip title="Editar">
 							<IconButton
 								onClick={() => {
-									VerRegistro(e.id_centro, name, 1);
+									VerRegistro(e.id_institucion, name, 1);
 								}}
 							>
 								<Edit />
@@ -110,7 +110,7 @@ const ServiciosInstitucionDataTable = () => {
 						<Tooltip title="Eliminar">
 							<IconButton
 								onClick={() => {
-									EliminarRegistro(e.id_centro, name);
+									EliminarRegistro(e.id_institucion, name);
 								}}
 							>
 								<Delete />

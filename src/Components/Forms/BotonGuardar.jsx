@@ -14,14 +14,18 @@ const BotonGuardar = ({formik}) => {
 				color="primary"
 				onClick={async (e) => {
 					e.preventDefault();
-					console.log('formik.values', formik.values);
+					/*const newValues = { ...formik.values };
+					 delete newValues['cluni']; // Elimina la clave del objeto
+					formik.setValues('newValues', newValues); 
+					console.log('newValues', newValues);*/
+					//console.log('formik.values', formik.values);
+					formik.handleSubmit();
 					console.log('formik.errors', formik.errors);
-					ErrorMessage(formik.errors);
+					
 					// Send form data to server here
 					/* if (!formik.errors) {
 					formik.handleSubmit();
 					setIdInstitucion(1);} */
-					formik.handleSubmit();
 					setIdInstitucion(1);
 				}}
 				className="!bg-primary !text-white"

@@ -1,23 +1,21 @@
-import React from 'react';
 import { Box, Divider, MenuItem, TextField, Typography, FormControl, FormLabel, RadioGroup, FormHelperText, FormControlLabel, Radio, Button } from '@mui/material';
 import { ErrorMessage, useFormik } from 'formik';
 import { useContext } from 'react';
 import * as Yup from 'yup';
 import { FormularioContext } from '../../Context/FormularioProvider';
-
 import { UtilsContext } from '../../Context/UtilsProvider';
 import { DataContext } from '../../Context/DataProvider';
 import BotonGuardar from '../BotonGuardar';
-import axios from 'axios';
+//import axios from 'axios';
 
 const TipoInstitutcion = () => {
 	const {
 		FormTipoInstitucion,
+		setFormTipoInstitucion,
 		IDEntidad,
 		IDMunicipio,
 		Entidad,
 		Municipio,
-		clearFormCAI,
 		BotoneraForm,
 		setTipoInstitucion,
 		TipoInstitucion,
@@ -26,37 +24,47 @@ const TipoInstitutcion = () => {
 		TipoRegistro,
 	} = useContext(FormularioContext);
 	const { SnackbarData, setSnackbarData, setOpenBackDrop } = useContext(UtilsContext);
-	const { headerList } = useContext(DataContext);
+	//const { headerList } = useContext(DataContext);
 
 	const formik = useFormik({
 		initialValues: FormTipoInstitucion.data,
 		validationSchema: Yup.object({
+			id_institucion: Yup.string().required(),
 			tipo_registro: Yup.number().required('Este campo es obligatorio'),
 			tipo_institucion: Yup.number().required('Este campo es obligatorio'),
-			rfc_institucion: Yup.string().required('Este campo es obligatorio').max(13, 'El RFC debe tener 13 caracteres.').min(13,  'El RFC debe tener 13 caracteres.').required('Este campo es obligatorio'),
+			rfc_institucion: Yup.string()
+				.required('Este campo es obligatorio')
+				.max(13, 'El RFC debe tener 13 caracteres.')
+				.min(13, 'El RFC debe tener 13 caracteres.')
+				.required('Este campo es obligatorio'),
 			razon_social: Yup.string().required('Este campo es obligatorio'),
 			siglas_institucion: Yup.string().required('Este campo es obligatorio'),
 			tipo_servicio: Yup.number().required('Este campo es obligatorio'),
 		}),
 		onSubmit: async (values) => {
 			try {
-				console.log('Submit values',values);
+				console.log('Submit values', values);
 				setOpenBackDrop(true);
-				let response;
-				if (formik.values.id_centro != null) {
+				setFormTipoInstitucion({
+					...FormTipoInstitucion,
+					data: formik.values,
+				});
+				console.log(FormTipoInstitucion.data);
+				//let response;
+				/* if (formik.values.id_institucion != 0) {
 					response = await axios.post(`https://api.dif.gob.mx/cuidados/cai/registro/`, values, { headers: headerList });
-				}else{
+				} else {
 					response = await axios.post(`https://api.dif.gob.mx/cuidados/cai/actualizar/`, values, { headers: headerList });
 				}
-				console.log('response',response)
+				console.log('response', response); */
 				setOpenBackDrop(false);
-				setSnackbarData({
+				/* setSnackbarData({
 					...SnackbarData,
 					open: true,
 					severity: 'success',
 					content: response.data.statusText,
 					duration: 3000,
-				});
+				}); */
 			} catch (error) {
 				console.error('Error:', error);
 				setOpenBackDrop(false);
@@ -136,7 +144,6 @@ const TipoInstitutcion = () => {
 							<MenuItem key={2} value="2">
 								Privada
 							</MenuItem>
-							
 						</TextField>
 					</Box>
 					{/* RFC */}
@@ -216,26 +223,6 @@ const TipoInstitutcion = () => {
 							</MenuItem>
 						</TextField>
 					</Box>
-					{/* Observaciones internas */}
-					{/* <Box className="col-span-12 grid grid-cols-12  md:col-span-12">
-						<TextField
-							type="text"
-							multiline
-							rows={4}
-							rowsMax={6}
-							fullWidth
-							className="col-span-12 md:col-span-6"
-							label="Observaciones internas"
-							name="observaciones"
-							value={formik.values.observaciones}
-							onChange={formik.handleChange}
-							onBlur={formik.handleBlur}
-							error={formik.touched.observaciones && Boolean(formik.errors.observaciones)}
-							helperText={formik.touched.observaciones && formik.errors.observaciones}
-							inputProps={{ maxLength: 10 }}
-						/>
-					</Box> */}
-
 					{/* Botonera */}
 					{BotoneraForm ? <BotonGuardar formik={formik} /> : null}
 				</form>

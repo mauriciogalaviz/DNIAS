@@ -11,73 +11,71 @@ import BotonGuardar from '../BotonGuardar';
 
 const ServiciosInstitucionCobertura = () => {
 	const { FormCoberturaGeo, IDEntidad, IDMunicipio, Entidad, Municipio, clearFormCAI, BotoneraForm } = useContext(FormularioContext);
-		const { SnackbarData, setSnackbarData, setOpenBackDrop } = useContext(UtilsContext);
-		const { headerList } = useContext(DataContext);
-	
-		const formik = useFormik({
-			initialValues: FormCoberturaGeo.data,
-			validationSchema: Yup.object({
-				id_centro: Yup.string().required('Este campo es obligatorio'),
-				entidad: Yup.number().required('Este campo es obligatorio'),
-				municipio: Yup.number().required('Este campo es obligatorio'),
-			}),
-			onSubmit: async (values) => {
-				console.log(values);
-				setOpenBackDrop(true);
-				values.id_entidad = IDEntidad;
-				values.id_municipio = IDMunicipio;
-				values.entidad = Entidad;
-				values.municipio = Municipio;
-				let url = `https://api.dif.gob.mx/cuidados/cai/registro/`;
-				let metodo = 'POST';
-				if (formik.values.id_centro != null) {
-					url = `https://api.dif.gob.mx/cuidados/cai/actualizar/`;
-					metodo = 'PUT';
-				}
+	const { SnackbarData, setSnackbarData, setOpenBackDrop } = useContext(UtilsContext);
+	const { headerList } = useContext(DataContext);
 
-				try {
-					let response = await fetch(url, {
-						method: metodo,
-						headers: headerList,
-						body: JSON.stringify(values),
-					});
-					if (!response.ok) throw { error: response.status, message: response.statusText };
-					let json = await response.json();
-					console.log(json);
-					setOpenBackDrop(false);
-					clearFormCAI();
-					setSnackbarData({
-						...SnackbarData,
-						open: true,
-						severity: 'success',
-						content: 'CAI creada correctamente.',
-						duration: 3000,
-					});
-					clearFormCAI();
-				} catch (error) {
-					console.error('Error:', error);
-					setOpenBackDrop(false);
-					setSnackbarData({
-						...SnackbarData,
-						open: true,
-						severity: 'error',
-						content: 'Hubo un error al crear la CAI. Por favor, intente de nuevo.',
-						duration: 3000,
-					});
-				}
-			},
-			enableReinitialize: true,
-			validateOnBlur: true,
-			validateOnChange: true,
-			validateOnMount: true,
-		});
-  return (
+	const formik = useFormik({
+		initialValues: FormCoberturaGeo.data,
+		validationSchema: Yup.object({
+			id_institucion: Yup.string().required('Este campo es obligatorio'),
+			entidad: Yup.number().required('Este campo es obligatorio'),
+			municipio: Yup.number().required('Este campo es obligatorio'),
+		}),
+		onSubmit: async (values) => {
+			console.log(values);
+			setOpenBackDrop(true);
+			values.id_entidad = IDEntidad;
+			values.id_municipio = IDMunicipio;
+			values.entidad = Entidad;
+			values.municipio = Municipio;
+			let url = `https://api.dif.gob.mx/cuidados/cai/registro/`;
+			let metodo = 'POST';
+			if (formik.values.id_institucion != null) {
+				url = `https://api.dif.gob.mx/cuidados/cai/actualizar/`;
+				metodo = 'PUT';
+			}
+
+			try {
+				let response = await fetch(url, {
+					method: metodo,
+					headers: headerList,
+					body: JSON.stringify(values),
+				});
+				if (!response.ok) throw { error: response.status, message: response.statusText };
+				let json = await response.json();
+				console.log(json);
+				setOpenBackDrop(false);
+				clearFormCAI();
+				setSnackbarData({
+					...SnackbarData,
+					open: true,
+					severity: 'success',
+					content: 'CAI creada correctamente.',
+					duration: 3000,
+				});
+				clearFormCAI();
+			} catch (error) {
+				console.error('Error:', error);
+				setOpenBackDrop(false);
+				setSnackbarData({
+					...SnackbarData,
+					open: true,
+					severity: 'error',
+					content: 'Hubo un error al crear la CAI. Por favor, intente de nuevo.',
+					duration: 3000,
+				});
+			}
+		},
+		enableReinitialize: true,
+		validateOnBlur: true,
+		validateOnChange: true,
+		validateOnMount: true,
+	});
+	return (
 		<Box className="col-span-12 grid grid-cols-12">
 			<Box className="col-span-12 grid grid-cols-12 p-4">
-				
 				<Divider className="col-span-12 pt-2" />
 				<form onSubmit={formik.handleSubmit} onChange={formik.handleChange} onBlur={formik.handleBlur} className="col-span-12 grid grid-cols-12 gap-4 pt-4">
-					
 					{/* Entidad */}
 					<Box className="col-span-12 md:col-span-12">
 						<TextField
@@ -137,13 +135,11 @@ const ServiciosInstitucionCobertura = () => {
 						</TextField>
 					</Box>
 					{/* Botonera */}
-					{BotoneraForm ? (
-						<BotonGuardar formik={formik} />
-					) : null}
+					{BotoneraForm ? <BotonGuardar formik={formik} /> : null}
 				</form>
 			</Box>
 		</Box>
-  );
-}
+	);
+};
 
-export default ServiciosInstitucionCobertura
+export default ServiciosInstitucionCobertura;

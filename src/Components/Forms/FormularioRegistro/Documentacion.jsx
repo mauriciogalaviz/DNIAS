@@ -18,7 +18,7 @@ const Documentacion = () => {
 	const formik = useFormik({
 		initialValues: FormDocumentacion.data,
 		validationSchema: Yup.object({
-			id_centro: Yup.string().required('Este campo es obligatorio'),
+			id_institucion: Yup.string().required('Este campo es obligatorio'),
 			nombre_captura: Yup.string().required('Este campo es obligatorio'),
 			cargo_captura: Yup.string().required('Este campo es obligatorio'),
 			fecha_captura: Yup.string().required('Este campo es obligatorio'),
@@ -27,10 +27,10 @@ const Documentacion = () => {
 		onSubmit: async (values) => {
 			console.log(values);
 			setOpenBackDrop(true);
-
+			
 			let url = `https://api.dif.gob.mx/cuidados/cai/registro/`;
 			let metodo = 'POST';
-			if (formik.values.id_centro != null) {
+			if (formik.values.id_institucion != null) {
 				url = `https://api.dif.gob.mx/cuidados/cai/actualizar/`;
 				metodo = 'PUT';
 			}
@@ -87,13 +87,14 @@ const Documentacion = () => {
 					</Typography>
 					<Box className="col-span-12 md:col-span-12 text-left">
 						<FormControl component="fieldset">
-							<FormLabel component="legend" error={formik.touched.modelo_intervencion && Boolean(formik.errors.modelo_intervencion)}
-							>¿Cuenta con un modelo de intervención en asistencia social establecido?*</FormLabel>
+							<FormLabel component="legend" error={formik.touched.modelo_intervencion && Boolean(formik.errors.modelo_intervencion)}>
+								¿Cuenta con un modelo de intervención en asistencia social establecido?*
+							</FormLabel>
 							<RadioGroup row name="modelo_intervencion" value={formik.values.modelo_intervencion || ''} onChange={formik.handleChange}>
 								<FormControlLabel value={true} control={<Radio />} label="Sí" />
 								<FormControlLabel value={false} control={<Radio />} label="No" />
 							</RadioGroup>
-							<FormHelperText className='!text-red-600'>{formik.touched.modelo_intervencion && formik.errors.modelo_intervencion}</FormHelperText>
+							<FormHelperText className="!text-red-600">{formik.touched.modelo_intervencion && formik.errors.modelo_intervencion}</FormHelperText>
 						</FormControl>
 					</Box>
 					<Divider className="col-span-12 pt-2" />

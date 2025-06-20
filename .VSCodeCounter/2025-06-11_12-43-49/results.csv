@@ -1,0 +1,92 @@
+"filename", "language", "JSON", "SVG", "Markdown", "HTML", "JavaScript", "YAML", "PostCSS", "JavaScript JSX", "comment", "blank", "total"
+"d:\www\DNIAS\DNIAS_2025\README.md", "Markdown", 0, 0, 7, 0, 0, 0, 0, 0, 0, 6, 13
+"d:\www\DNIAS\DNIAS_2025\eslint.config.js", "JavaScript", 0, 0, 0, 0, 32, 0, 0, 0, 0, 2, 34
+"d:\www\DNIAS\DNIAS_2025\index.html", "HTML", 0, 0, 0, 22, 0, 0, 0, 0, 0, 1, 23
+"d:\www\DNIAS\DNIAS_2025\package.json", "JSON", 49, 0, 0, 0, 0, 0, 0, 0, 0, 1, 50
+"d:\www\DNIAS\DNIAS_2025\pnpm-lock.yaml", "YAML", 0, 0, 0, 0, 0, 3540, 0, 0, 0, 938, 4478
+"d:\www\DNIAS\DNIAS_2025\public\vite.svg", "SVG", 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1
+"d:\www\DNIAS\DNIAS_2025\src\App.css", "PostCSS", 0, 0, 0, 0, 0, 0, 9, 0, 0, 0, 9
+"d:\www\DNIAS\DNIAS_2025\src\App.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 45, 0, 6, 51
+"d:\www\DNIAS\DNIAS_2025\src\Components\ColumnsData\Options.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 184, 12, 14, 210
+"d:\www\DNIAS\DNIAS_2025\src\Components\Context\DataProvider.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 36, 10, 3, 49
+"d:\www\DNIAS\DNIAS_2025\src\Components\Context\FormularioProvider.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 809, 54, 11, 874
+"d:\www\DNIAS\DNIAS_2025\src\Components\Context\LoginProvider.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 192, 21, 5, 218
+"d:\www\DNIAS\DNIAS_2025\src\Components\Context\UserProvider.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 240, 70, 6, 316
+"d:\www\DNIAS\DNIAS_2025\src\Components\Context\UtilsProvider.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 73, 11, 7, 91
+"d:\www\DNIAS\DNIAS_2025\src\Components\DataTables\Administrador\ActualizacionAnual.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 40, 1, 5, 46
+"d:\www\DNIAS\DNIAS_2025\src\Components\DataTables\Administrador\ActualizacionAnual\EnCaptura.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 140, 63, 5, 208
+"d:\www\DNIAS\DNIAS_2025\src\Components\DataTables\Administrador\ActualizacionAnual\EnRevision.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 93, 62, 7, 162
+"d:\www\DNIAS\DNIAS_2025\src\Components\DataTables\Administrador\ActualizacionAnual\EnVerificar.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 88, 62, 6, 156
+"d:\www\DNIAS\DNIAS_2025\src\Components\DataTables\Administrador\ActualizacionAnual\PorAdministrador.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 94, 62, 7, 163
+"d:\www\DNIAS\DNIAS_2025\src\Components\DataTables\Administrador\PreRegistro.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 40, 1, 5, 46
+"d:\www\DNIAS\DNIAS_2025\src\Components\DataTables\Administrador\PreRegistro\EnCaptura.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 104, 3, 3, 110
+"d:\www\DNIAS\DNIAS_2025\src\Components\DataTables\Administrador\PreRegistro\EnRevision.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 104, 62, 5, 171
+"d:\www\DNIAS\DNIAS_2025\src\Components\DataTables\Administrador\PreRegistro\EnVerificar.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 122, 63, 6, 191
+"d:\www\DNIAS\DNIAS_2025\src\Components\DataTables\Administrador\PreRegistro\PorAdministrador.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 122, 62, 6, 190
+"d:\www\DNIAS\DNIAS_2025\src\Components\DataTables\Administrador\TableroAdmin.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 15, 0, 3, 18
+"d:\www\DNIAS\DNIAS_2025\src\Components\DataTables\Administrador\Tablero\Tablero.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 143, 53, 6, 202
+"d:\www\DNIAS\DNIAS_2025\src\Components\DataTables\EnlaceEstatal\ActualizacionAnualEnlace.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 40, 1, 3, 44
+"d:\www\DNIAS\DNIAS_2025\src\Components\DataTables\EnlaceEstatal\PreregistroEnlace.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 40, 1, 3, 44
+"d:\www\DNIAS\DNIAS_2025\src\Components\DataTables\EnlaceEstatal\TableroEnlace.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 15, 0, 3, 18
+"d:\www\DNIAS\DNIAS_2025\src\Components\DataTables\Institucion\InstitucionCentros.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 195, 8, 8, 211
+"d:\www\DNIAS\DNIAS_2025\src\Components\DataTables\Verificador\TableroVerificador.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 15, 0, 3, 18
+"d:\www\DNIAS\DNIAS_2025\src\Components\FormsOther\ButtonSave.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 93, 2, 3, 98
+"d:\www\DNIAS\DNIAS_2025\src\Components\FormsOther\CargaArchivos.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 120, 4, 7, 131
+"d:\www\DNIAS\DNIAS_2025\src\Components\FormsOther\CargaDenuncia.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 109, 4, 9, 122
+"d:\www\DNIAS\DNIAS_2025\src\Components\FormsOther\CargaPeriodo.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 95, 4, 7, 106
+"d:\www\DNIAS\DNIAS_2025\src\Components\FormsOther\SaveFiles.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 94, 0, 13, 107
+"d:\www\DNIAS\DNIAS_2025\src\Components\FormsOther\SelectUsers.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 91, 7, 7, 105
+"d:\www\DNIAS\DNIAS_2025\src\Components\Forms\BotonGuardar.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 32, 4, 2, 38
+"d:\www\DNIAS\DNIAS_2025\src\Components\Forms\DniasForm.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 81, 2, 13, 96
+"d:\www\DNIAS\DNIAS_2025\src\Components\Forms\DniasTabs.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 171, 2, 16, 189
+"d:\www\DNIAS\DNIAS_2025\src\Components\Forms\FormularioRegistro\AsistenciaSocial.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 224, 21, 12, 257
+"d:\www\DNIAS\DNIAS_2025\src\Components\Forms\FormularioRegistro\DatosDomicilio.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 596, 29, 8, 633
+"d:\www\DNIAS\DNIAS_2025\src\Components\Forms\FormularioRegistro\DatosLegales.jsx.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 576, 42, 10, 628
+"d:\www\DNIAS\DNIAS_2025\src\Components\Forms\FormularioRegistro\DatosLegalesDataTable.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 162, 62, 5, 229
+"d:\www\DNIAS\DNIAS_2025\src\Components\Forms\FormularioRegistro\DatosLegalesRep.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 228, 10, 7, 245
+"d:\www\DNIAS\DNIAS_2025\src\Components\Forms\FormularioRegistro\Documentacion.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 151, 2, 9, 162
+"d:\www\DNIAS\DNIAS_2025\src\Components\Forms\FormularioRegistro\DocumentacionCargaArchivos.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 144, 1, 3, 148
+"d:\www\DNIAS\DNIAS_2025\src\Components\Forms\FormularioRegistro\DocumentacionDataTable.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 99, 2, 6, 107
+"d:\www\DNIAS\DNIAS_2025\src\Components\Forms\FormularioRegistro\DomicilioGeo.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 101, 0, 9, 110
+"d:\www\DNIAS\DNIAS_2025\src\Components\Forms\FormularioRegistro\RecursosHumanos.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 706, 8, 8, 722
+"d:\www\DNIAS\DNIAS_2025\src\Components\Forms\FormularioRegistro\RecursosHumanosDataTable.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 99, 3, 6, 108
+"d:\www\DNIAS\DNIAS_2025\src\Components\Forms\FormularioRegistro\RecursosHumanosGobierno.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 116, 2, 7, 125
+"d:\www\DNIAS\DNIAS_2025\src\Components\Forms\FormularioRegistro\RecursosHumanosInstitucionDataTable.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 100, 3, 6, 109
+"d:\www\DNIAS\DNIAS_2025\src\Components\Forms\FormularioRegistro\RecusosHumanosInfra.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 97, 4, 5, 106
+"d:\www\DNIAS\DNIAS_2025\src\Components\Forms\FormularioRegistro\RegistroInstitucion.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 7, 0, 2, 9
+"d:\www\DNIAS\DNIAS_2025\src\Components\Forms\FormularioRegistro\ServiciosInstitucion.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 414, 56, 9, 479
+"d:\www\DNIAS\DNIAS_2025\src\Components\Forms\FormularioRegistro\ServiciosInstitucionCobertura.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 137, 3, 6, 146
+"d:\www\DNIAS\DNIAS_2025\src\Components\Forms\FormularioRegistro\ServiciosInstitucionDataTable.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 104, 61, 5, 170
+"d:\www\DNIAS\DNIAS_2025\src\Components\Forms\FormularioRegistro\ServiciosSalud.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 168, 14, 9, 191
+"d:\www\DNIAS\DNIAS_2025\src\Components\Forms\FormularioRegistro\TipoDiscapacidad.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 84, 0, 5, 89
+"d:\www\DNIAS\DNIAS_2025\src\Components\Forms\FormularioRegistro\TipoInstitutcion.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 218, 26, 7, 251
+"d:\www\DNIAS\DNIAS_2025\src\Components\Home\Home.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 12, 0, 3, 15
+"d:\www\DNIAS\DNIAS_2025\src\Components\Home\Layout.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 379, 22, 10, 411
+"d:\www\DNIAS\DNIAS_2025\src\Components\Login\Login.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 186, 5, 11, 202
+"d:\www\DNIAS\DNIAS_2025\src\Components\Login\RepPass\RepPassEmail.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 119, 8, 6, 133
+"d:\www\DNIAS\DNIAS_2025\src\Components\Login\RepPass\RepPassPass.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 123, 5, 6, 134
+"d:\www\DNIAS\DNIAS_2025\src\Components\Login\RepPass\RepPassSuccess.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 30, 0, 0, 30
+"d:\www\DNIAS\DNIAS_2025\src\Components\Login\RepPass\RepPassToken.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 119, 7, 6, 132
+"d:\www\DNIAS\DNIAS_2025\src\Components\Menus\MenuAdministrador.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 297, 20, 11, 328
+"d:\www\DNIAS\DNIAS_2025\src\Components\Menus\MenuEnlaceEstatal.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 208, 2, 8, 218
+"d:\www\DNIAS\DNIAS_2025\src\Components\Menus\MenuInstitucion.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 190, 7, 6, 203
+"d:\www\DNIAS\DNIAS_2025\src\Components\Menus\MenuVerificador.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 129, 6, 1, 136
+"d:\www\DNIAS\DNIAS_2025\src\Components\Users\FormUsers.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 273, 15, 4, 292
+"d:\www\DNIAS\DNIAS_2025\src\Components\Users\ListUsers.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 21, 0, 2, 23
+"d:\www\DNIAS\DNIAS_2025\src\Components\Users\RecoverPass.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 49, 4, 2, 55
+"d:\www\DNIAS\DNIAS_2025\src\Components\Users\UserControl.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 12, 0, 4, 16
+"d:\www\DNIAS\DNIAS_2025\src\Components\Utils\BackDrop.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 15, 0, 4, 19
+"d:\www\DNIAS\DNIAS_2025\src\Components\Utils\ButtonNav.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 17, 0, 4, 21
+"d:\www\DNIAS\DNIAS_2025\src\Components\Utils\DataTables.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 13, 0, 4, 17
+"d:\www\DNIAS\DNIAS_2025\src\Components\Utils\DialogMax.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 46, 3, 9, 58
+"d:\www\DNIAS\DNIAS_2025\src\Components\Utils\SCDialog.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 22, 0, 3, 25
+"d:\www\DNIAS\DNIAS_2025\src\Components\Utils\SnackBarItem.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 23, 0, 4, 27
+"d:\www\DNIAS\DNIAS_2025\src\Components\Utils\codpost.js", "JavaScript", 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 9
+"d:\www\DNIAS\DNIAS_2025\src\assets\img\facebook.svg", "SVG", 0, 13, 0, 0, 0, 0, 0, 0, 1, 3, 17
+"d:\www\DNIAS\DNIAS_2025\src\assets\img\instagram.svg", "SVG", 0, 19, 0, 0, 0, 0, 0, 0, 1, 4, 24
+"d:\www\DNIAS\DNIAS_2025\src\assets\img\twitter.svg", "SVG", 0, 13, 0, 0, 0, 0, 0, 0, 1, 3, 17
+"d:\www\DNIAS\DNIAS_2025\src\assets\react.svg", "SVG", 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1
+"d:\www\DNIAS\DNIAS_2025\src\index.css", "PostCSS", 0, 0, 0, 0, 0, 0, 61, 0, 8, 2, 71
+"d:\www\DNIAS\DNIAS_2025\src\main.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 0, 24, 0, 2, 26
+"d:\www\DNIAS\DNIAS_2025\vite.config.js", "JavaScript", 0, 0, 0, 0, 7, 0, 0, 0, 1, 2, 10
+"Total", "-", 49, 47, 7, 22, 48, 3540, 70, 10713, 1176, 1429, 17101

@@ -5,6 +5,11 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import { Box } from '@mui/material';
 import PropTypes from 'prop-types';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import L from 'leaflet';
+import { renderToString } from 'react-dom/server';
+
+
 
 const DEFAULT_POSITION = [23.6345, -102.5528]; // Coordenadas de México
 const DEFAULT_ZOOM = 5; // Zoom inicial
@@ -38,6 +43,15 @@ function FlyToLocation({ position, triggerFly }) {
 const DomicilioGeo = ({formik}) => {
 	const [position, setPosition] = useState([formik.values.lat, formik.values.lng]);
 	const [triggerFly, setTriggerFly] = useState(false);
+	// Convierte el ícono de Material UI en una imagen SVG para Leaflet
+	const iconHtml = renderToString(<LocationOnIcon style={{ fontSize: 40 }} className='text-red-800' />);
+
+	const customIcon = L.divIcon({
+		html: iconHtml,
+		className: 'custom-leaflet-icon', // Puedes añadir estilos adicionales aquí
+		iconSize: [40, 40],
+		iconAnchor: [20, 40],
+	});
 
 	const handleInputChange = (e) => {
 		const { name, value } = e.target;
@@ -69,7 +83,7 @@ const DomicilioGeo = ({formik}) => {
 					<TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 					<FlyToLocation position={position} triggerFly={triggerFly} />
 					<MapEvents setPosition={setPosition} setTriggerFly={setTriggerFly} />
-					<Marker position={position}></Marker>
+					<Marker position={position} icon={customIcon}></Marker>
 				</MapContainer>
 			</Box>
 			<Box className="col-span-12 grid grid-cols-12 gap-4">

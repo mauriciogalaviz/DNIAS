@@ -12,7 +12,7 @@ import { Add } from '@mui/icons-material';
 import { InputLabel } from '@mui/material';
 
 const ServiciosInstitucion = () => {
-	const { FormDatosServicios, IDEntidad, IDMunicipio, Entidad, Municipio, clearFormCAI, BotoneraForm } = useContext(FormularioContext);
+	const { FormDatosServicios, setFormDatosServicios, IDEntidad, IDMunicipio, Entidad, Municipio, clearFormCAI, BotoneraForm } = useContext(FormularioContext);
 	const { SnackbarData, setSnackbarData, setOpenBackDrop } = useContext(UtilsContext);
 	const { headerList } = useContext(DataContext);
 
@@ -44,14 +44,20 @@ const ServiciosInstitucion = () => {
 		}),
 		onSubmit: async (values) => {
 			console.log(values);
+			
 			setOpenBackDrop(true);
+			setFormDatosServicios({
+				...FormDatosServicios,
+				data: formik.values,
+			});
+			console.log(FormDatosServicios.data);
 			values.id_entidad = IDEntidad;
 			values.id_municipio = IDMunicipio;
 			values.entidad = Entidad;
 			values.municipio = Municipio;
 			let url = `https://api.dif.gob.mx/cuidados/cai/registro/`;
 			let metodo = 'POST';
-			if (formik.values.id_centro != null) {
+			if (formik.values.id_institucion != null) {
 				url = `https://api.dif.gob.mx/cuidados/cai/actualizar/`;
 				metodo = 'PUT';
 			}
@@ -118,8 +124,9 @@ const ServiciosInstitucion = () => {
 							onChange={formik.handleChange}
 							onBlur={formik.handleBlur}
 							error={formik.touched.objeto_social && Boolean(formik.errors.objeto_social)}
-							helperText={formik.touched.objeto_social && formik.errors.objeto_social}
+							helperText={formik.touched.objeto_social && formik.errors.objeto_social ? formik.errors.objeto_social : 'Máximo 300 Caracteres'}
 							required
+							inputProps={{ maxLength: 300 }}
 						/>
 					</Box>
 					<Divider className="col-span-12 pt-2" />
@@ -423,7 +430,9 @@ const ServiciosInstitucion = () => {
 					</Typography>
 
 					<Box className="col-span-12 md:col-span-12">
-						<InputLabel className='col-span-12 !text-right'>Agregar los Estados y Municipios de la cobertura geográfica  dando clic en el botón <Add /> de la tabla </InputLabel>
+						<InputLabel className="col-span-12 !text-right">
+							Agregar los Estados y Municipios de la cobertura geográfica dando clic en el botón <Add /> de la tabla{' '}
+						</InputLabel>
 						<ServiciosInstitucionDataTable />
 					</Box>
 					<Box className="col-span-12 md:col-span-6 lg:col-span-4">

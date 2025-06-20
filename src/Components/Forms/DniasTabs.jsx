@@ -1,4 +1,3 @@
-import * as React from 'react';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
@@ -10,6 +9,9 @@ import { useContext } from 'react';
 import { UtilsContext } from '../Context/UtilsProvider.jsx';
 import { FormularioContext } from '../Context/FormularioProvider.jsx';
 import ServiciosSalud from './FormularioRegistro/ServiciosSalud.jsx';
+import BotoneraUser from './FormularioRegistro/BotoneraUser.jsx';
+import { Chip } from '@mui/material';
+import CedulaPreRegistro from './CedulaPreRegistro.jsx';
 const TipoInstitutcion = lazy(() => import('./FormularioRegistro/TipoInstitutcion'));
 const DatosDomicilio = lazy(() => import('./FormularioRegistro/DatosDomicilio'));
 const DatosLegales = lazy(() => import('./FormularioRegistro/DatosLegales.jsx'));
@@ -55,10 +57,24 @@ const DniasTabs = () => {
 		setIdInstitucion,
 		TipoInstitucion,
 		TipoServicioInstitucion,
+		FormTipoInstitucion,
+		FormDomicilio,
+
 		//setTipoServicioInstitucion,
 	} = useContext(FormularioContext);
-	const { FallBackIn } = useContext(UtilsContext);
+	const { FallBackIn, setOpenBackDrop } = useContext(UtilsContext);
+	const [CreatePDF, setCreatePDF] = useState(false);
+
+	const handleClick = () => {
+		setOpenBackDrop(true);
+		setCreatePDF(true);
+		setTimeout(() => {
+			setCreatePDF(false);
+			setOpenBackDrop(false);
+		}, 3000);
+	};
 	const [value, setValue] = useState(0);
+	const [Showing, setShowing] = useState(0);
 
 	const steps = [
 		'Tipo de Institución y servicios brindados',
@@ -94,9 +110,19 @@ const DniasTabs = () => {
 
 	return (
 		<Card sx={{ width: '100%' }} className="col-span-12 grid grid-cols-12">
-			<Typography variant="h5" className="col-span-12 py-4 bg-primary !text-white">
-				Datos del registro
-			</Typography>
+			<Box className="col-span-12 p-4 bg-primary flex items-center justify-center-safe">
+				<Typography variant="h5" className="!text-white !w-full !text-center pl-8">
+					Datos del registro
+				</Typography>
+				
+				<Chip
+					size="small"
+					label="imprimir avance"
+					onClick={handleClick}
+					className='!text-white !border-2 !border-white'
+				/>
+			</Box>
+
 			<Box sx={{ borderBottom: 1, borderColor: 'divider' }} className="p-4 !col-span-12 ">
 				<Tabs value={value} onChange={handleChange} aria-label="basic tabs example" className="!grid !grid-cols-1 !col-span-12" variant="fullWidth" sx={{ width: '100%' }}>
 					{steps.map((e, i) => (
@@ -106,23 +132,31 @@ const DniasTabs = () => {
 							wrapped
 							label={e}
 							{...a11yProps(i)}
-							onClick={() => {
+							onClick={async () => {
 								if (i == 0) {
-									CargaTipoInstitucion();
+									await CargaTipoInstitucion();
+									setShowing(0);
 								} else if (i == 1) {
-									CargaDatosDomicilio();
+									await CargaDatosDomicilio();
+									setShowing(1);
 								} else if (i == 2) {
-									CargaDatosLegales();
+									await CargaDatosLegales();
+									setShowing(2);
 								} else if (i == 3) {
-									CargaServiciosInstitucion();
+									await CargaServiciosInstitucion();
+									setShowing(3);
 								} else if (i == 4) {
-									CargaAsistenciaSocial();
+									await CargaAsistenciaSocial();
+									setShowing(4);
 								} else if (i == 5 && TipoInstitucion >= 2) {
-									CargaServiciosSalud();
+									await CargaServiciosSalud();
+									setShowing(5);
 								} else if (i == 6) {
-									CargaRecursosHumanos();
+									await CargaRecursosHumanos();
+									setShowing(6);
 								} else if (i == 7) {
-									CargaDocumentacion();
+									await CargaDocumentacion();
+									setShowing(7);
 								}
 							}}
 							disabled={IdInstitucion == 0 && i > 0 ? true : false}
@@ -134,27 +168,15 @@ const DniasTabs = () => {
 			<Suspense fallback={<FallBackIn />}>
 				{steps.map((e, i) => (
 					<CustomTabPanel className="col-span-12" value={value} index={i} key={i}>
-						{i === 0 ? <TipoInstitutcion /> : null}
-						{i === 1 ? <DatosDomicilio /> : null}
-						{i === 2 ? <DatosLegales /> : null}
-						{i === 3 ? <ServiciosInstitucion /> : null}
-						{i === 4 ? <AsistenciaSocial /> : null}
-						{i === 5 ? <ServiciosSalud /> : null}
-						{i === 6 ? <RecursosHumanos /> : null}
-						{i === 7 ? <Documentacion /> : null}
-
-						<Box className="col-span-12 p-4 flex justify-end gap-4">
-							{value !== 0 ? (
-								<Button disabled={value === 0} onClick={handleBack} className="!bg-primary !text-white dark:!text-inherit">
-									Regresar
-								</Button>
-							) : null}
-							{IdInstitucion != 0 ? (
-								<Button variant="contained" className="!bg-primary !text-white dark:!text-inherit" onClick={handleNext}>
-									{value === steps.length - 1 ? 'Enviar' : 'Siguiente'}
-								</Button>
-							) : null}
-						</Box>
+						{Showing === 0 ? <TipoInstitutcion /> : null}
+						{Showing === 1 ? <DatosDomicilio /> : null}
+						{Showing === 2 ? <DatosLegales /> : null}
+						{Showing === 3 ? <ServiciosInstitucion /> : null}
+						{Showing === 4 ? <AsistenciaSocial /> : null}
+						{Showing === 5 ? <ServiciosSalud /> : null}
+						{Showing === 6 ? <RecursosHumanos /> : null}
+						{Showing === 7 ? <Documentacion /> : null}
+						<BotoneraUser value={value} handleBack={handleBack} steps={steps} IdInstitucion={IdInstitucion} handleNext={handleNext} />
 					</CustomTabPanel>
 				))}
 			</Suspense>
@@ -171,6 +193,8 @@ const DniasTabs = () => {
 			>
 				Change Institucion {IdInstitucion}
 			</Button>
+
+			{CreatePDF ? <CedulaPreRegistro /> : null}
 		</Card>
 	);
 };

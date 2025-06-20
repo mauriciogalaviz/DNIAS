@@ -42,6 +42,7 @@ import ActualizacionAnualEnlace from '../DataTables/EnlaceEstatal/ActualizacionA
 import TableroEnlace from '../DataTables/EnlaceEstatal/TableroEnlace';
 import TableroVerificador from '../DataTables/Verificador/TableroVerificador';
 import { UtilsContext } from '../Context/UtilsProvider';
+import Dictamen from '../Forms/Verificador/Dictamen';
 
 const DniasTabs = lazy(() => import('../Forms/DniasTabs'));
 const PreRegistro = lazy(() => import('../DataTables/Administrador/PreRegistro'));
@@ -402,8 +403,11 @@ export default function Layout() {
 						{/* {NavModule != 3 ? <TressFiles /> : null} */}
 						{/* {NavModule == 30 ? <UserControl /> : null} */}
 						{/* NavModule == 4 ? <UserControl /> : null} */}
+						
 					</Suspense>
+					
 				</Box>
+			
 			</Box>
 		</Box>
 	);

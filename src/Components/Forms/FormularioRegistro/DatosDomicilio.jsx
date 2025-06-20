@@ -10,7 +10,7 @@ import BotonGuardar from '../BotonGuardar';
 import DomicilioGeo from './DomicilioGeo';
 
 const DatosDomicilio = () => {
-	const { FormDomicilio, bringcod, IDEntidad, IDMunicipio, Entidad, Municipio, BotoneraForm, TipoInstitucion, clearDataForm2 } = useContext(FormularioContext);
+	const { FormDomicilio, setFormDomicilio, bringcod, IDEntidad, IDMunicipio, Entidad, Municipio, BotoneraForm, TipoInstitucion, clearDataForm2 } = useContext(FormularioContext);
 	const { SnackbarData, setSnackbarData, setOpenBackDrop } = useContext(UtilsContext);
 	const { headerList } = useContext(DataContext);
 
@@ -24,22 +24,22 @@ const DatosDomicilio = () => {
 			vialidad: Yup.string().required('Este campo es requerido'),
 			calle: Yup.string().required('Este campo es requerido'),
 			num_ext: Yup.string().required('Este campo es requerido'),
-			num_int: Yup.string().required('Este campo es requerido'),
+			num_int: Yup.string().notRequired(),
 			entre_calle1: Yup.string().required('Este campo es requerido'),
 			entre_calle2: Yup.string().required('Este campo es requerido'),
 			cp: Yup.string().required('Este campo es requerido'),
-			id_entidad: Yup.string().required('Este campo es requerido'),
-			id_municipio: Yup.string().required('Este campo es requerido'),
+			id_entidad: Yup.string().notRequired(),
+			id_municipio: Yup.string().notRequired(),
 			id_asentamiento: Yup.string().required('Este campo es requerido'),
 			telefono1: Yup.string().required('Este campo es requerido'),
 			telefono2: Yup.string().required('Este campo es requerido'),
 			telefono3: Yup.string().required('Este campo es requerido'),
 			correo_institucion: Yup.string().required('Este campo es requerido'),
-			web: Yup.string().required('Este campo es requerido'),
-			redes: Yup.string().required('Este campo es requerido'),
+			web: Yup.string().notRequired(),
+			redes: Yup.string().notRequired(),
 			nombre_responsable: Yup.string().required('Este campo es requerido'),
 			pa_responsable: Yup.string().required('Este campo es requerido'),
-			sa_responsble: Yup.string().required('Este campo es requerido'),
+			sa_responsble: Yup.string().notRequired(),
 			telefono1_responsable: Yup.string().required('Este campo es requerido'),
 			telefono2_responsable: Yup.string().required('Este campo es requerido'),
 			celular_responsable: Yup.string().required('Este campo es requerido'),
@@ -48,15 +48,23 @@ const DatosDomicilio = () => {
 			fecha_expedicion_responsable: Yup.string().required('Este campo es requerido'),
 		}),
 		onSubmit: async (values) => {
+			const newValues = { ...formik.values };
+			delete newValues['cluni']; // Elimina la clave del objeto
+			formik.setValues(newValues);
 			console.log(values);
 			setOpenBackDrop(true);
-			values.id_entidad = IDEntidad;
-			values.id_municipio = IDMunicipio;
+			setFormDomicilio({
+				...FormDomicilio,
+				data: formik.values,
+			});
+			console.log(FormDomicilio.data);
+			values.id_entidad = 0;
+			values.id_municipio = 0;
 			values.entidad = Entidad;
 			values.municipio = Municipio;
 			let url = `https://api.dif.gob.mx/cuidados/cai/registro/`;
 			let metodo = 'POST';
-			if (formik.values.id_centro != null) {
+			if (formik.values.id_institucion != null) {
 				url = `https://api.dif.gob.mx/cuidados/cai/actualizar/`;
 				metodo = 'PUT';
 			}
@@ -343,12 +351,12 @@ const DatosDomicilio = () => {
 							select
 							className="col-span-12"
 							label="Asentamiento / Colonia"
-							name="colonia"
-							value={formik.values.colonia}
+							name="id_asentamiento"
+							value={formik.values.id_asentamiento}
 							onChange={formik.handleChange}
 							onBlur={formik.handleBlur}
-							error={formik.touched.colonia && Boolean(formik.errors.colonia)}
-							helperText={formik.touched.colonia && formik.errors.colonia}
+							error={formik.touched.id_asentamiento && Boolean(formik.errors.id_asentamiento)}
+							helperText={formik.touched.id_asentamiento && formik.errors.id_asentamiento}
 							required
 						>
 							<MenuItem key={1} value="1">

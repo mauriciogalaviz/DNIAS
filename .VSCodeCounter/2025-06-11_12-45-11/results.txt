@@ -1,0 +1,151 @@
+Date : 2025-06-11 12:45:11
+Directory : d:\www\DNIAS\DNIAS_2025
+Total : 90 files,  14496 codes, 1176 comments, 1429 blanks, all 17101 lines
+
+Languages
++----------------+------------+------------+------------+------------+------------+
+| language       | files      | code       | comment    | blank      | total      |
++----------------+------------+------------+------------+------------+------------+
+| JavaScript JSX |         76 |     10,713 |      1,164 |        467 |     12,344 |
+| YAML           |          1 |      3,540 |          0 |        938 |      4,478 |
+| PostCSS        |          2 |         70 |          8 |          2 |         80 |
+| JSON           |          1 |         49 |          0 |          1 |         50 |
+| JavaScript     |          3 |         48 |          1 |          4 |         53 |
+| SVG            |          5 |         47 |          3 |         10 |         60 |
+| HTML           |          1 |         22 |          0 |          1 |         23 |
+| Markdown       |          1 |          7 |          0 |          6 |         13 |
++----------------+------------+------------+------------+------------+------------+
+
+Directories
++---------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                    | files      | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                       |         90 |     14,496 |      1,176 |      1,429 |     17,101 |
+| . (Files)                                                                                               |          6 |      3,657 |          1 |        950 |      4,608 |
+| public                                                                                                  |          1 |          1 |          0 |          0 |          1 |
+| src                                                                                                     |         83 |     10,838 |      1,175 |        479 |     12,492 |
+| src (Files)                                                                                             |          4 |        139 |          8 |         10 |        157 |
+| src\Components                                                                                          |         75 |     10,653 |      1,164 |        459 |     12,276 |
+| src\Components\ColumnsData                                                                              |          1 |        184 |         12 |         14 |        210 |
+| src\Components\Context                                                                                  |          5 |      1,350 |        166 |         32 |      1,548 |
+| src\Components\DataTables                                                                               |         17 |      1,410 |        504 |         84 |      1,998 |
+| src\Components\DataTables\Administrador                                                                 |         12 |      1,105 |        494 |         64 |      1,663 |
+| src\Components\DataTables\Administrador (Files)                                                         |          3 |         95 |          2 |         13 |        110 |
+| src\Components\DataTables\Administrador\ActualizacionAnual                                              |          4 |        415 |        249 |         25 |        689 |
+| src\Components\DataTables\Administrador\PreRegistro                                                     |          4 |        452 |        190 |         20 |        662 |
+| src\Components\DataTables\Administrador\Tablero                                                         |          1 |        143 |         53 |          6 |        202 |
+| src\Components\DataTables\EnlaceEstatal                                                                 |          3 |         95 |          2 |          9 |        106 |
+| src\Components\DataTables\Institucion                                                                   |          1 |        195 |          8 |          8 |        211 |
+| src\Components\DataTables\Verificador                                                                   |          1 |         15 |          0 |          3 |         18 |
+| src\Components\Forms                                                                                    |         24 |      4,815 |        357 |        175 |      5,347 |
+| src\Components\Forms (Files)                                                                            |          3 |        284 |          8 |         31 |        323 |
+| src\Components\FormsOther                                                                               |          6 |        602 |         21 |         46 |        669 |
+| src\Components\Forms\FormularioRegistro                                                                 |         21 |      4,531 |        349 |        144 |      5,024 |
+| src\Components\Home                                                                                     |          2 |        391 |         22 |         13 |        426 |
+| src\Components\Login                                                                                    |          5 |        577 |         25 |         29 |        631 |
+| src\Components\Login (Files)                                                                            |          1 |        186 |          5 |         11 |        202 |
+| src\Components\Login\RepPass                                                                            |          4 |        391 |         20 |         18 |        429 |
+| src\Components\Menus                                                                                    |          4 |        824 |         35 |         26 |        885 |
+| src\Components\Users                                                                                    |          4 |        355 |         19 |         12 |        386 |
+| src\Components\Utils                                                                                    |          7 |        145 |          3 |         28 |        176 |
+| src\assets                                                                                              |          4 |         46 |          3 |         10 |         59 |
+| src\assets (Files)                                                                                      |          1 |          1 |          0 |          0 |          1 |
+| src\assets\img                                                                                          |          3 |         45 |          3 |         10 |         58 |
++---------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++---------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| filename                                                                                                | language       | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| d:\www\DNIAS\DNIAS_2025\README.md                                                                       | Markdown       |          7 |          0 |          6 |         13 |
+| d:\www\DNIAS\DNIAS_2025\eslint.config.js                                                                | JavaScript     |         32 |          0 |          2 |         34 |
+| d:\www\DNIAS\DNIAS_2025\index.html                                                                      | HTML           |         22 |          0 |          1 |         23 |
+| d:\www\DNIAS\DNIAS_2025\package.json                                                                    | JSON           |         49 |          0 |          1 |         50 |
+| d:\www\DNIAS\DNIAS_2025\pnpm-lock.yaml                                                                  | YAML           |      3,540 |          0 |        938 |      4,478 |
+| d:\www\DNIAS\DNIAS_2025\public\vite.svg                                                                 | SVG            |          1 |          0 |          0 |          1 |
+| d:\www\DNIAS\DNIAS_2025\src\App.css                                                                     | PostCSS        |          9 |          0 |          0 |          9 |
+| d:\www\DNIAS\DNIAS_2025\src\App.jsx                                                                     | JavaScript JSX |         45 |          0 |          6 |         51 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\ColumnsData\Options.jsx                                          | JavaScript JSX |        184 |         12 |         14 |        210 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Context\DataProvider.jsx                                         | JavaScript JSX |         36 |         10 |          3 |         49 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Context\FormularioProvider.jsx                                   | JavaScript JSX |        809 |         54 |         11 |        874 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Context\LoginProvider.jsx                                        | JavaScript JSX |        192 |         21 |          5 |        218 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Context\UserProvider.jsx                                         | JavaScript JSX |        240 |         70 |          6 |        316 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Context\UtilsProvider.jsx                                        | JavaScript JSX |         73 |         11 |          7 |         91 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\DataTables\Administrador\ActualizacionAnual.jsx                  | JavaScript JSX |         40 |          1 |          5 |         46 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\DataTables\Administrador\ActualizacionAnual\EnCaptura.jsx        | JavaScript JSX |        140 |         63 |          5 |        208 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\DataTables\Administrador\ActualizacionAnual\EnRevision.jsx       | JavaScript JSX |         93 |         62 |          7 |        162 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\DataTables\Administrador\ActualizacionAnual\EnVerificar.jsx      | JavaScript JSX |         88 |         62 |          6 |        156 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\DataTables\Administrador\ActualizacionAnual\PorAdministrador.jsx | JavaScript JSX |         94 |         62 |          7 |        163 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\DataTables\Administrador\PreRegistro.jsx                         | JavaScript JSX |         40 |          1 |          5 |         46 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\DataTables\Administrador\PreRegistro\EnCaptura.jsx               | JavaScript JSX |        104 |          3 |          3 |        110 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\DataTables\Administrador\PreRegistro\EnRevision.jsx              | JavaScript JSX |        104 |         62 |          5 |        171 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\DataTables\Administrador\PreRegistro\EnVerificar.jsx             | JavaScript JSX |        122 |         63 |          6 |        191 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\DataTables\Administrador\PreRegistro\PorAdministrador.jsx        | JavaScript JSX |        122 |         62 |          6 |        190 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\DataTables\Administrador\TableroAdmin.jsx                        | JavaScript JSX |         15 |          0 |          3 |         18 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\DataTables\Administrador\Tablero\Tablero.jsx                     | JavaScript JSX |        143 |         53 |          6 |        202 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\DataTables\EnlaceEstatal\ActualizacionAnualEnlace.jsx            | JavaScript JSX |         40 |          1 |          3 |         44 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\DataTables\EnlaceEstatal\PreregistroEnlace.jsx                   | JavaScript JSX |         40 |          1 |          3 |         44 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\DataTables\EnlaceEstatal\TableroEnlace.jsx                       | JavaScript JSX |         15 |          0 |          3 |         18 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\DataTables\Institucion\InstitucionCentros.jsx                    | JavaScript JSX |        195 |          8 |          8 |        211 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\DataTables\Verificador\TableroVerificador.jsx                    | JavaScript JSX |         15 |          0 |          3 |         18 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\FormsOther\ButtonSave.jsx                                        | JavaScript JSX |         93 |          2 |          3 |         98 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\FormsOther\CargaArchivos.jsx                                     | JavaScript JSX |        120 |          4 |          7 |        131 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\FormsOther\CargaDenuncia.jsx                                     | JavaScript JSX |        109 |          4 |          9 |        122 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\FormsOther\CargaPeriodo.jsx                                      | JavaScript JSX |         95 |          4 |          7 |        106 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\FormsOther\SaveFiles.jsx                                         | JavaScript JSX |         94 |          0 |         13 |        107 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\FormsOther\SelectUsers.jsx                                       | JavaScript JSX |         91 |          7 |          7 |        105 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Forms\BotonGuardar.jsx                                           | JavaScript JSX |         32 |          4 |          2 |         38 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Forms\DniasForm.jsx                                              | JavaScript JSX |         81 |          2 |         13 |         96 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Forms\DniasTabs.jsx                                              | JavaScript JSX |        171 |          2 |         16 |        189 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Forms\FormularioRegistro\AsistenciaSocial.jsx                    | JavaScript JSX |        224 |         21 |         12 |        257 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Forms\FormularioRegistro\DatosDomicilio.jsx                      | JavaScript JSX |        596 |         29 |          8 |        633 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Forms\FormularioRegistro\DatosLegales.jsx.jsx                    | JavaScript JSX |        576 |         42 |         10 |        628 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Forms\FormularioRegistro\DatosLegalesDataTable.jsx               | JavaScript JSX |        162 |         62 |          5 |        229 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Forms\FormularioRegistro\DatosLegalesRep.jsx                     | JavaScript JSX |        228 |         10 |          7 |        245 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Forms\FormularioRegistro\Documentacion.jsx                       | JavaScript JSX |        151 |          2 |          9 |        162 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Forms\FormularioRegistro\DocumentacionCargaArchivos.jsx          | JavaScript JSX |        144 |          1 |          3 |        148 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Forms\FormularioRegistro\DocumentacionDataTable.jsx              | JavaScript JSX |         99 |          2 |          6 |        107 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Forms\FormularioRegistro\DomicilioGeo.jsx                        | JavaScript JSX |        101 |          0 |          9 |        110 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Forms\FormularioRegistro\RecursosHumanos.jsx                     | JavaScript JSX |        706 |          8 |          8 |        722 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Forms\FormularioRegistro\RecursosHumanosDataTable.jsx            | JavaScript JSX |         99 |          3 |          6 |        108 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Forms\FormularioRegistro\RecursosHumanosGobierno.jsx             | JavaScript JSX |        116 |          2 |          7 |        125 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Forms\FormularioRegistro\RecursosHumanosInstitucionDataTable.jsx | JavaScript JSX |        100 |          3 |          6 |        109 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Forms\FormularioRegistro\RecusosHumanosInfra.jsx                 | JavaScript JSX |         97 |          4 |          5 |        106 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Forms\FormularioRegistro\RegistroInstitucion.jsx                 | JavaScript JSX |          7 |          0 |          2 |          9 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Forms\FormularioRegistro\ServiciosInstitucion.jsx                | JavaScript JSX |        414 |         56 |          9 |        479 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Forms\FormularioRegistro\ServiciosInstitucionCobertura.jsx       | JavaScript JSX |        137 |          3 |          6 |        146 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Forms\FormularioRegistro\ServiciosInstitucionDataTable.jsx       | JavaScript JSX |        104 |         61 |          5 |        170 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Forms\FormularioRegistro\ServiciosSalud.jsx                      | JavaScript JSX |        168 |         14 |          9 |        191 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Forms\FormularioRegistro\TipoDiscapacidad.jsx                    | JavaScript JSX |         84 |          0 |          5 |         89 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Forms\FormularioRegistro\TipoInstitutcion.jsx                    | JavaScript JSX |        218 |         26 |          7 |        251 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Home\Home.jsx                                                    | JavaScript JSX |         12 |          0 |          3 |         15 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Home\Layout.jsx                                                  | JavaScript JSX |        379 |         22 |         10 |        411 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Login\Login.jsx                                                  | JavaScript JSX |        186 |          5 |         11 |        202 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Login\RepPass\RepPassEmail.jsx                                   | JavaScript JSX |        119 |          8 |          6 |        133 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Login\RepPass\RepPassPass.jsx                                    | JavaScript JSX |        123 |          5 |          6 |        134 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Login\RepPass\RepPassSuccess.jsx                                 | JavaScript JSX |         30 |          0 |          0 |         30 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Login\RepPass\RepPassToken.jsx                                   | JavaScript JSX |        119 |          7 |          6 |        132 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Menus\MenuAdministrador.jsx                                      | JavaScript JSX |        297 |         20 |         11 |        328 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Menus\MenuEnlaceEstatal.jsx                                      | JavaScript JSX |        208 |          2 |          8 |        218 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Menus\MenuInstitucion.jsx                                        | JavaScript JSX |        190 |          7 |          6 |        203 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Menus\MenuVerificador.jsx                                        | JavaScript JSX |        129 |          6 |          1 |        136 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Users\FormUsers.jsx                                              | JavaScript JSX |        273 |         15 |          4 |        292 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Users\ListUsers.jsx                                              | JavaScript JSX |         21 |          0 |          2 |         23 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Users\RecoverPass.jsx                                            | JavaScript JSX |         49 |          4 |          2 |         55 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Users\UserControl.jsx                                            | JavaScript JSX |         12 |          0 |          4 |         16 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Utils\BackDrop.jsx                                               | JavaScript JSX |         15 |          0 |          4 |         19 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Utils\ButtonNav.jsx                                              | JavaScript JSX |         17 |          0 |          4 |         21 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Utils\DataTables.jsx                                             | JavaScript JSX |         13 |          0 |          4 |         17 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Utils\DialogMax.jsx                                              | JavaScript JSX |         46 |          3 |          9 |         58 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Utils\SCDialog.jsx                                               | JavaScript JSX |         22 |          0 |          3 |         25 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Utils\SnackBarItem.jsx                                           | JavaScript JSX |         23 |          0 |          4 |         27 |
+| d:\www\DNIAS\DNIAS_2025\src\Components\Utils\codpost.js                                                 | JavaScript     |          9 |          0 |          0 |          9 |
+| d:\www\DNIAS\DNIAS_2025\src\assets\img\facebook.svg                                                     | SVG            |         13 |          1 |          3 |         17 |
+| d:\www\DNIAS\DNIAS_2025\src\assets\img\instagram.svg                                                    | SVG            |         19 |          1 |          4 |         24 |
+| d:\www\DNIAS\DNIAS_2025\src\assets\img\twitter.svg                                                      | SVG            |         13 |          1 |          3 |         17 |
+| d:\www\DNIAS\DNIAS_2025\src\assets\react.svg                                                            | SVG            |          1 |          0 |          0 |          1 |
+| d:\www\DNIAS\DNIAS_2025\src\index.css                                                                   | PostCSS        |         61 |          8 |          2 |         71 |
+| d:\www\DNIAS\DNIAS_2025\src\main.jsx                                                                    | JavaScript JSX |         24 |          0 |          2 |         26 |
+| d:\www\DNIAS\DNIAS_2025\vite.config.js                                                                  | JavaScript     |          7 |          1 |          2 |         10 |
+| Total                                                                                                   |                |     14,496 |      1,176 |      1,429 |     17,101 |
++---------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
