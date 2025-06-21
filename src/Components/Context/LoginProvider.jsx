@@ -3,10 +3,12 @@ import PropTypes from 'prop-types';
 import { useContext } from 'react';
 import { UtilsContext } from './UtilsProvider';
 import { Box, Button, Typography } from '@mui/material';
+import { CatalogoContext } from './CatalogoProvider';
 
 const LoginContext = createContext();
 const LoginProvider = ({ children }) => {
-	const { DialogData, setDialogData, SnackbarData, setSnackbarData } = useContext(UtilsContext);
+	const { DialogData, setDialogData, SnackbarData, setSnackbarData, setOpenBackDrop } = useContext(UtilsContext);
+	const { GetCatalogos } = useContext(CatalogoContext);
 	/*** Control Session ********************************************** */
 	const [ActiveSession, setActiveSession] = useState(true);
 	// UserLogIN
@@ -25,6 +27,7 @@ const LoginProvider = ({ children }) => {
 	};
 	const postLogin = async (values) => {
 		try {
+			setOpenBackDrop(true)
 			let res = await fetch('https://api.dif.gob.mx/cuidados/login/', {
 				method: 'POST',
 				body: JSON.stringify(values),
@@ -43,9 +46,12 @@ const LoginProvider = ({ children }) => {
 					statusText: json.statusText,
 				};
 			//console.log('json.token', json.token);
+			await GetCatalogos()
+			setOpenBackDrop(false);
 			return json;
 		} catch (error) {
 			console.log(error);
+			setOpenBackDrop(false);
 			setSnackbarData({
 				...SnackbarData,
 				open: true,

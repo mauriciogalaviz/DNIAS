@@ -5,12 +5,14 @@ import { DataContext } from './DataProvider';
 import { useContext } from 'react';
 import { UtilsContext } from './UtilsProvider';
 import { Box } from '@mui/material';
+import { Button } from '@mui/material';
+import { Typography } from '@mui/material';
 //import { LoginContext } from './LoginProvider';
 const FormularioContext = createContext();
 
 const FormularioProvider = ({ children }) => {
 	//const { headerList, setNavModule } = useContext(DataContext);
-	const { /* setOpenBackDrop, */ SnackbarData, setSnackbarData } = useContext(UtilsContext);
+	const { /* setOpenBackDrop, */ SnackbarData, setSnackbarData, setDialogData, DialogData, DiologOnClose } = useContext(UtilsContext);
 	//const { UserLogIn } = useContext(LoginContext);
 	const [activeButton, setActiveButton] = useState({
 		active: -1,
@@ -683,7 +685,6 @@ const FormularioProvider = ({ children }) => {
 	//////////////////////////////////
 	// Carga Forms
 	const CargaTipoInstitucion = async () => {
-		
 		console.log('CargaTipoInstitucion');
 	};
 	const CargaDatosDomicilio = async () => {
@@ -760,6 +761,97 @@ const FormularioProvider = ({ children }) => {
 		});
 		setIdInstitucion(0);
 		setTipoInstitucion(0);
+	};
+	// Change Estatus Registro
+	const ChangeEstatus = (estatus) => {
+		console.log('estatus enviado', estatus);
+	};
+	const ChangeEstatusCuestion = (estatus) => {
+		const Cat_Estatus = [
+			{ id: 1, name: 'ACTUALIZACIÓN ANUAL EN CAPTURA' },
+			{ id: 2, name: 'ACTUALIZACIÓN ANUAL ENVIADA' },
+			{ id: 3, name: 'ACTUALIZACIÓN ANUAL POR REVISIÓN ADMINISTRADOR CON VERIFICACIÓN' },
+			{ id: 4, name: 'ACTUALIZACIÓN ANUAL POR REVISIÓN ADMINISTRADOR INSTITUCIÓN PÚBLICA' },
+			{ id: 5, name: 'ACTUALIZACIÓN ANUAL POR REVISIÓN ADMINISTRADOR SIN VERIFICACIÓN' },
+			{ id: 6, name: 'ACTUALIZACIÓN ANUAL POR VERIFICAR' },
+			{ id: 7, name: 'ACTUALIZACIÓN ANUAL RECHAZADA POR ADMINISTRADOR' },
+			{ id: 8, name: 'ACTUALIZACIÓN ANUAL RECHAZADA POR ENLACE ESTATAL' },
+			{ id: 9, name: 'ACTUALIZACIÓN ANUAL RECHAZADA POR VERIFICADOR' },
+			{ id: 10, name: 'ACTUALIZACIÓN ANUAL VERIFICADA' },
+			{ id: 11, name: 'ACTUALIZACIÓN ANUAL POR REVISIÓN VERIFICADOR' },
+			{ id: 12, name: 'CONSTANCIA DE ACTUALIZACIÓN ANUAL EMITIDA' },
+			{ id: 13, name: 'CONSTANCIA EMITIDA' },
+			{ id: 14, name: 'CONSTANCIA POR VENCER' },
+			{ id: 15, name: 'CONSTANCIA VENCIDA' },
+			{ id: 16, name: 'DICTAMEN DE ACTUALIZACIÓN ANUAL RECHAZADO POR ENLACE ESTATAL' },
+			{ id: 17, name: 'DICTAMEN RECHAZADO POR ENLACE ESTATAL' },
+			{ id: 18, name: 'FICHA DE SALUD EN CAPTURA' },
+			{ id: 19, name: 'FICHA DE SALUD POR REVISIÓN ADMINISTRADOR DE SALUD' },
+			{ id: 20, name: 'FICHA DE SALUD RECHAZADA POR ADMINISTRADOR DE SALUD' },
+			{ id: 21, name: 'INSTITUCIÓN DE ASISTENCIA NO AUTORIZADA' },
+			{ id: 22, name: 'INSTITUCIÓN DE ASISTENCIA NO AUTORIZADA DESDE ACTUALIZACIÓN ANUAL' },
+			{ id: 23, name: 'INSTITUCIÓN DE SALUD NO AUTORIZADA' },
+			{ id: 24, name: 'MEJOR PRÁCTICA AUTORIZADA' },
+			{ id: 25, name: 'MEJOR PRÁCTICA EN CAPTURA' },
+			{ id: 26, name: 'MEJOR PRÁCTICA POR REVISIÓN ENLACE INTERNO' },
+			{ id: 27, name: 'MEJOR PRÁCTICA RECHAZADA POR ENLACE INTERNO' },
+			{ id: 28, name: 'MODELO AUTORIZADO' },
+			{ id: 29, name: 'MODELO EN CAPTURA' },
+			{ id: 30, name: 'MODELO POR REVISIÓN ENLACE INTERNO' },
+			{ id: 31, name: 'MODELO RECHAZADO' },
+			{ id: 32, name: 'MODIFICACIÓN DE DATOS INSTITUCIÓN PÚBLICA' },
+			{ id: 33, name: 'MODIFICACIÓN DE DATOS POR REVISIÓN ADMINISTRADOR DE SALUD' },
+			{ id: 34, name: 'MODIFICACIÓN DE DATOS POR REVISIÓN ENLACE ESTATAL' },
+			{ id: 35, name: 'MODIFICACIÓN DE FICHA DE SALUD POR REVISIÓN ADMINISTRADOR DE SALUD' },
+			{ id: 36, name: 'NUEVA VERIFICACIÓN' },
+			{ id: 37, name: 'NUEVA VERIFICACIÓN PARA ACTUALIZACIÓN ANUAL' },
+			{ id: 38, name: 'ORGANIZACIONES DE LA SOCIEDAD CIVIL CON PERFIL' },
+			{ id: 39, name: 'ORGANIZACIONES DE LA SOCIEDAD CIVIL SIN PERFIL' },
+			{ id: 40, name: 'POR REVISIÓN ADMINISTRADOR CON VERIFICACIÓN' },
+			{ id: 41, name: 'POR REVISIÓN ADMINISTRADOR DE SALUD' },
+			{ id: 42, name: 'POR REVISIÓN ADMINISTRADOR INSTITUCIÓN PÚBLICA' },
+			{ id: 43, name: 'POR REVISIÓN ADMINISTRADOR SIN VERIFICACIÓN' },
+			{ id: 44, name: 'POR REVISIÓN DE VERIFICADOR' },
+			{ id: 45, name: 'POR VERIFICAR' },
+			{ id: 46, name: 'EN CAPTURA' },
+			{ id: 47, name: 'ENVIADO' },
+			{ id: 48, name: 'RECHAZADO POR ADMINISTRADOR' },
+			{ id: 49, name: 'RECHAZADO POR ADMINISTRADOR DE SALUD' },
+			{ id: 50, name: 'RECHAZADO POR ENLACE ESTATAL' },
+			{ id: 51, name: 'RECHAZADO POR VERIFICADOR' },
+			{ id: 52, name: 'PUBLICADO' },
+			{ id: 53, name: 'VERIFICADO' },
+			{ id: 54, name: 'CANCELACION LOGICA' },
+		];
+		const estat = Cat_Estatus.find((item) => item.id === estatus)?.name;
+		setDialogData({
+			...DialogData,
+			open: true,
+			title: 'Cambio de estatus',
+			subtitle: 'Cambiar el registro de estatus',
+			content: (
+				<Box className="col-span-12 grid grid-cols-12 gap-4">
+					<Typography className="col-span-12 text-2xl">Cambiar el registro al estatus de {estat}</Typography>
+				</Box>
+			),
+			action: (
+				<Box className="col-span-12 grid grid-cols-12 gap-4">
+					<Button
+						variant="contained"
+						className="!bg-primary !text-white col-span-2"
+						onClick={() => {
+							ChangeEstatus(estatus);
+						}}
+					>
+						Continuar
+					</Button>
+					<Button variant="contained" className="!bg-primary !text-white col-span-2" onClick={DiologOnClose}>
+						Cerrar
+					</Button>
+				</Box>
+			),
+			maxWidth: 'sm',
+		});
 	};
 
 	/////////////////////////////
@@ -871,7 +963,8 @@ const FormularioProvider = ({ children }) => {
 		FormDocumentacionCarga,
 		setFormDocumentacionCarga,
 		// Formulario Dictamen
-		FormularioDictamen, setFormularioDictamen,
+		FormularioDictamen,
+		setFormularioDictamen,
 		////////////////////////////
 		//Carga Forms
 		CargaTipoInstitucion,
@@ -886,6 +979,9 @@ const FormularioProvider = ({ children }) => {
 		ClearPreRegistro,
 		//Control Errors
 		ErrorMessage,
+		// Change Estatus Registro
+		ChangeEstatus,
+		ChangeEstatusCuestion,
 		/////////////////////////////
 		/////////////////////////////
 

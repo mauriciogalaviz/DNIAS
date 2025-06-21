@@ -95,18 +95,23 @@ const DniasTabs = () => {
 		setValue((prevValue) => {
 			let nextValue = Math.min(prevValue + 1, steps.length - 1);
 
-			// Si el siguiente valor es 5 y TipoInstitucion < 2, salta al siguiente
 			if (nextValue === 5 && TipoInstitucion < 2) {
 				nextValue = Math.min(nextValue + 1, steps.length - 1);
 			}
 
+			setShowing(nextValue); // 🔥 Aquí está la clave
 			return nextValue;
 		});
 	};
 
 	const handleBack = () => {
-		setValue((prevValue) => Math.max(prevValue - 1, 0));
+		setValue((prevValue) => {
+			const newValue = Math.max(prevValue - 1, 0);
+			setShowing(newValue); // 🔥 También aquí
+			return newValue;
+		});
 	};
+	
 
 	return (
 		<Card sx={{ width: '100%' }} className="col-span-12 grid grid-cols-12">

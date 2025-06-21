@@ -11,8 +11,10 @@ import AutorizaVerificacion from '../EnlaceEstatal/AutorizarVerificacion';
 import DialogMax from '../../Utils/DialogMax';
 import { useState } from 'react';
 import Dictamen from '../Verificador/Dictamen';
+import { FormularioContext } from '../../Context/FormularioProvider';
 
 const BotoneraUser = ({ value, IdInstitucion, handleBack, steps, handleNext }) => {
+	const { ChangeEstatusCuestion } = useContext(FormularioContext);
 	const { DialogData, setDialogData, DiologOnClose } = useContext(UtilsContext);
 	const {UserLogIn} = useContext(LoginContext);
 	const [OpenDictamen, setOpenDictamen] = useState(false);
@@ -25,7 +27,10 @@ const BotoneraUser = ({ value, IdInstitucion, handleBack, steps, handleNext }) =
 					</Button>
 				) : null}
 				{IdInstitucion != 0 ? (
-					<Button variant="contained" className="!bg-primary !text-white dark:!text-inherit" onClick={handleNext} hidden={UserLogIn.tipo_usuario >= 2 ? true : false}>
+					<Button variant="contained" className="!bg-primary !text-white dark:!text-inherit" onClick={()=>{
+						
+						value === steps.length - 1 ? ChangeEstatusCuestion(47) : handleNext();
+					}} hidden={UserLogIn.tipo_usuario >= 2 ? true : false}>
 						{value === steps.length - 1 ? 'Enviar' : 'Siguiente'}
 					</Button>
 				) : null}
